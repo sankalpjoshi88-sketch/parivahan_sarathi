@@ -16,7 +16,7 @@ The app uses hash routes, so screens such as `http://localhost:8080/Code/#/docum
 
 ## UX/UI case study
 
-`case-study.html` is the full research-to-UI case study: context and problem framing, four interviews and seven failure themes, an emotional journey map, three personas, prioritisation, design principles, low-fidelity wireframes, six annotated high-fidelity screens, the design system and content rules, accessibility notes, and a usability-testing and measurement plan.
+`case-study.html` is a 15-section, research-to-UI case study: a project-at-a-glance summary, context and problem framing, four interviews and seven failure themes, an emotional journey map, three personas, prioritisation, design principles, three explored directions with the decision and trade-offs behind them, low-fidelity wireframes, six numbered high-fidelity screens, the design system and content rules, accessibility notes, an impact model, and a usability-testing and measurement plan.
 
 It is a standalone page (its own `css/case-study.css` and `js/case-study.js`), linked from the prototype footer, and print-styled so it can be saved as a PDF from the browser.
 

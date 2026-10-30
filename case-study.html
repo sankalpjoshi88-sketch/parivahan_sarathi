@@ -35,7 +35,7 @@
       <div class="wrap hero-grid">
         <div>
           <p class="eyebrow">Independent hackathon project · 2026</p>
-          <h1 id="hero-title">From “I need help<br>to finish this” to<br><em>“I can do this myself.”</em></h1>
+          <h1 id="hero-title">From “I need help <br>to finish this” to <br><em>“I can do this myself.”</em></h1>
           <p class="hero-sub">A research-led UX/UI case study of the learner’s licence application on India’s Parivahan → Sarathi portal: four interviews, seven recurring failure themes, and a 32-screen high-fidelity prototype designed so a first-time applicant never has to call a friend, an agent — or Google.</p>
           <dl class="hero-meta">
             <div><dt>Role</dt><dd>UX research, UI design, prototyping</dd></div>
@@ -90,20 +90,25 @@
       <aside class="toc" aria-label="Case study contents">
         <p class="toc-label">Contents</p>
         <ol>
+          <li class="toc-group" role="presentation" aria-hidden="true">Understand</li>
           <li><a href="#overview"><span class="n">01</span> Overview</a></li>
           <li><a href="#context"><span class="n">02</span> Context &amp; problem</a></li>
           <li><a href="#research"><span class="n">03</span> Research</a></li>
           <li><a href="#insights"><span class="n">04</span> Insights</a></li>
           <li><a href="#journey"><span class="n">05</span> Journey</a></li>
+          <li class="toc-group" role="presentation" aria-hidden="true">Define</li>
           <li><a href="#personas"><span class="n">06</span> Personas</a></li>
           <li><a href="#direction"><span class="n">07</span> Direction</a></li>
           <li><a href="#principles"><span class="n">08</span> Principles</a></li>
-          <li><a href="#wireframes"><span class="n">09</span> Wireframes</a></li>
-          <li><a href="#ui"><span class="n">10</span> Final UI</a></li>
-          <li><a href="#system"><span class="n">11</span> Design system</a></li>
-          <li><a href="#accessibility"><span class="n">12</span> Accessibility</a></li>
-          <li><a href="#measurement"><span class="n">13</span> Measurement</a></li>
-          <li><a href="#reflection"><span class="n">14</span> Reflection</a></li>
+          <li class="toc-group" role="presentation" aria-hidden="true">Design</li>
+          <li><a href="#explorations"><span class="n">09</span> Explorations</a></li>
+          <li><a href="#wireframes"><span class="n">10</span> Wireframes</a></li>
+          <li><a href="#ui"><span class="n">11</span> Final UI</a></li>
+          <li><a href="#system"><span class="n">12</span> Design system</a></li>
+          <li class="toc-group" role="presentation" aria-hidden="true">Validate</li>
+          <li><a href="#accessibility"><span class="n">13</span> Accessibility</a></li>
+          <li><a href="#measurement"><span class="n">14</span> Measurement</a></li>
+          <li><a href="#reflection"><span class="n">15</span> Reflection</a></li>
         </ol>
         <div class="toc-cta">
           <a href="index.html">Open the prototype <span aria-hidden="true">↗</span><span>32 screens, hash-routed, no build step</span></a>
@@ -120,6 +125,27 @@
               <p class="eyebrow">Overview</p>
               <h2 id="overview-title">A five-minute form that takes five weeks to trust</h2>
               <p>A learner’s licence is many Indians’ first contact with a government service as an adult. The Parivahan → Sarathi journey is technically online, but in practice it is completed with a parent on speakerphone, a friend cropping a photo, and a driving-school agent on WhatsApp. This case study starts from that gap between “available online” and “completable alone” — and designs the missing layer: guidance, proof and plain language.</p>
+            </div>
+          </div>
+
+          <div class="glance">
+            <div class="glance-head">
+              <p class="kicker">Project at a glance</p>
+              <span class="glance-meta">15 sections · 6 key screens</span>
+            </div>
+            <dl class="glance-facts">
+              <div><dt>Role</dt><dd>Solo — research, IA, UI, content and prototype</dd></div>
+              <div><dt>Scope</dt><dd>Delhi learner’s licence, search to licence issued</dd></div>
+              <div><dt>Timeline</dt><dd>Hackathon sprint, 2026</dd></div>
+              <div><dt>Methods</dt><dd>4 interviews, affinity map, journey map, HMW</dd></div>
+              <div><dt>Tools</dt><dd>FigJam · vanilla HTML, CSS and JS</dd></div>
+              <div><dt>Constraints</dt><dd>Static hosting, no backend, synthetic data</dd></div>
+            </dl>
+            <div class="glance-links">
+              <a href="#context">The problem</a>
+              <a href="#explorations">Design directions</a>
+              <a href="#ui">The six screens</a>
+              <a href="index.html">Live prototype <span aria-hidden="true">↗</span></a>
             </div>
           </div>
 
@@ -156,7 +182,7 @@
           </div>
 
           <div class="note" style="margin-top:1.2rem">
-            <strong>Honest scope note.</strong> This is a hackathon-scale project. The research base is four qualitative interviews synthesised in a FigJam board — enough to frame problems and provoke design, not enough to claim statistical confidence. No usability test has been run on the designs below yet; <a href="#measurement">section 13</a> sets out exactly how that will be measured instead of guessing.
+            <strong>Honest scope note.</strong> This is a hackathon-scale project. The research base is four qualitative interviews synthesised in a FigJam board — enough to frame problems and provoke design, not enough to claim statistical confidence. No usability test has been run on the designs below yet; <a href="#measurement">section 14</a> sets out exactly how that will be measured instead of guessing.
           </div>
         </section>
 
@@ -268,6 +294,7 @@
             </figure>
           </div>
 
+          <p class="takeaway"><span>Takeaway</span> Every participant arrived with a workaround already built. The design brief is to make the workaround unnecessary — not to explain the portal better.</p>
           <div class="callout" style="margin-top:1.4rem">
             <strong>Research limitation, stated plainly.</strong>
             <p class="small" style="margin-bottom:0">Four interviews in two locations, conducted as a hackathon sprint. The sample skews young, urban and English-literate. Findings should be read as strong hypotheses about first-time applicants — not as a representative study of all applicants, and not as a substitute for moderated testing with low-vision, low-literacy or regional-language users.</p>
@@ -450,6 +477,7 @@
             <li>Liveness check at the RTO — more friction.</li>
             <li>Ask family, friends, Google or an agent.</li>
           </ol>
+          <p class="takeaway"><span>Takeaway</span> The failures are not spread evenly. They cluster at three seams — entry, evidence and status — which is where the redesign spends its effort.</p>
         </section>
 
         <!-- ============================ 06 PERSONAS ============================ -->
@@ -582,6 +610,7 @@
             <div class="card card-flat"><p class="kicker">Payment</p><h4>…eliminate payment anxiety and provide lasting proof?</h4><p class="small muted" style="margin-bottom:0">Answer with a strong success state, receipt access and clear failure semantics.</p></div>
             <div class="card card-flat"><p class="kicker">Independence</p><h4>…let a first-timer finish without family, friends or agents?</h4><p class="small muted" style="margin-bottom:0">Answer by designing self-service recovery instead of a helpline as the fallback.</p></div>
           </div>
+          <p class="takeaway"><span>Takeaway</span> Priority follows consequence, not visibility. That is why the RTO default outranks the home page, and why a status label gets the same scrutiny as a primary button.</p>
         </section>
 
         <!-- ============================ 08 PRINCIPLES ============================ -->
@@ -623,10 +652,95 @@
           </div>
         </section>
 
-        <!-- ============================ 09 WIREFRAMES ============================ -->
-        <section class="cs-section" id="wireframes" aria-labelledby="wireframes-title">
+        <!-- ============================ 09 EXPLORATIONS ============================ -->
+        <section class="cs-section" id="explorations" aria-labelledby="explorations-title">
           <div class="section-head">
             <span class="section-num" aria-hidden="true">09</span>
+            <div>
+              <p class="eyebrow">Design exploration</p>
+              <h2 id="explorations-title">Three directions, one deliberate bet</h2>
+              <p>Before wireframes, I forced the brief into three competing strategies and judged them against the same bar: does this remove a P0 failure, or only make it easier to explain afterwards? Each direction solved something real. Only one moved the expensive decisions into the interface.</p>
+            </div>
+          </div>
+
+          <div class="concepts">
+            <article class="concept">
+              <div class="concept-head"><span class="concept-letter" aria-hidden="true">A</span><span class="tag tag-p2">Rejected</span></div>
+              <h3>Content rescue</h3>
+              <p>Keep the portal as it is. Rewrite the labels, publish the photo rules and add a glossary for internal status names.</p>
+              <div class="concept-wire" aria-hidden="true"><i class="w80"></i><i class="w60"></i><i class="hl w80"></i><i class="w60"></i></div>
+              <dl>
+                <div><dt>Strength</dt><dd>Cheapest intervention: no flow, policy or engineering change.</dd></div>
+                <div><dt>Why it lost</dt><dd>It fixes wording after the damage. The wrong RTO and the rejected photo still happen first.</dd></div>
+              </dl>
+              <p class="concept-verdict"><span class="tag tag-neutral">Kept: the content rules</span></p>
+            </article>
+
+            <article class="concept chosen">
+              <div class="concept-head"><span class="concept-letter" aria-hidden="true">B</span><span class="tag tag-ui">Chosen</span></div>
+              <h3>Guided proof</h3>
+              <p>One continuous identity, and a proof moment at every irreversible decision: RTO, photo, status, payment, licence.</p>
+              <div class="concept-wire" aria-hidden="true"><i class="w80"></i><i class="hl"></i><i class="w60"></i><i class="hl"></i><i class="w80"></i></div>
+              <dl>
+                <div><dt>Strength</dt><dd>Prevents the expensive errors at the decision, on a phone, with no new intermediary.</dd></div>
+                <div><dt>Cost</dt><dd>32 screens, a content model, and cooperation on the Parivahan → Sarathi redirect.</dd></div>
+              </dl>
+              <p class="concept-verdict"><span class="tag tag-ok">Built as the prototype</span></p>
+            </article>
+
+            <article class="concept">
+              <div class="concept-head"><span class="concept-letter" aria-hidden="true">C</span><span class="tag tag-p2">Rejected</span></div>
+              <h3>Assisted concierge</h3>
+              <p>A chat layer — human or bot — that walks the applicant through the journey and completes the risky steps for them.</p>
+              <div class="concept-wire" aria-hidden="true"><div class="bubble"></div><div class="bubble me"></div><div class="bubble"></div><div class="bubble me"></div></div>
+              <dl>
+                <div><dt>Strength</dt><dd>Lowest anxiety for first-timers, and the most forgiving for low-literacy users.</dd></div>
+                <div><dt>Why it lost</dt><dd>Institutionalises dependency, needs staffing and data handling, and hides the interface problems.</dd></div>
+              </dl>
+              <p class="concept-verdict"><span class="tag tag-neutral">Kept: one escape hatch</span></p>
+            </article>
+          </div>
+
+          <div class="table-scroll concept-matrix" tabindex="0">
+            <table class="cs-table">
+              <caption>Concept evaluation</caption>
+              <thead>
+                <tr><th scope="col">Criteria</th><th scope="col">A · Content rescue</th><th scope="col">B · Guided proof</th><th scope="col">C · Assisted concierge</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Independence</td><td>Weak</td><td>Strong</td><td>Weak — creates a new dependency</td></tr>
+                <tr><td>Prevents the P0 errors</td><td>Partial — after the fact</td><td>Strong — at the decision</td><td>Partial — a human catches it</td></tr>
+                <tr><td>Build and running cost</td><td>Low</td><td>Medium — 32 screens</td><td>High — staffing, privacy, operations</td></tr>
+                <tr><td>Policy and privacy risk</td><td>Low</td><td>Low–medium — needs redirect support</td><td>High — personal data in a new channel</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout concept-decision">
+            <strong>Decision.</strong>
+            <p class="small">Lead with B. The three P0 failures are decisions, not copy problems, so the interface has to carry proof at the moment of choice. A’s content rules were kept because they are what makes B explainable. C survives only as a single “Get help with this step” exit — never as the model.</p>
+          </div>
+
+          <div class="rule-title"><h3>Assumptions this direction bets on</h3><span>Named before the build, not after</span></div>
+          <div class="table-scroll" tabindex="0">
+            <table class="cs-table">
+              <caption>Riskiest assumptions and their mitigations</caption>
+              <thead>
+                <tr><th scope="col">Assumption</th><th scope="col">If it is wrong</th><th scope="col">Mitigation already in the design</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>A single “Saathi” identity can span the Parivahan → Sarathi handover</td><td>The trust signal breaks exactly where users get lost</td><td>Verified-domain marker and one continuous header even if the domain cannot change</td></tr>
+                <tr><td>PIN code is a reliable proxy for RTO jurisdiction</td><td>Border addresses get a confident but wrong recommendation</td><td>Show the boundary and distance; keep “I live at a different address” visible</td></tr>
+                <tr><td>SMS is a dependable status channel</td><td>Users miss the one message that closes the loop</td><td>Repeat status in-app and on the receipt; never make SMS the only proof</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============================ 10 WIREFRAMES ============================ -->
+        <section class="cs-section" id="wireframes" aria-labelledby="wireframes-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">10</span>
             <div>
               <p class="eyebrow">Low-fidelity wireframes</p>
               <h2 id="wireframes-title">Three P0 flows, sketched before pixels</h2>
@@ -721,26 +835,34 @@
           </div>
         </section>
 
-        <!-- ============================ 10 FINAL UI ============================ -->
+        <!-- ============================ 11 FINAL UI ============================ -->
         <section class="cs-section" id="ui" aria-labelledby="ui-title">
           <div class="section-head">
-            <span class="section-num" aria-hidden="true">10</span>
+            <span class="section-num" aria-hidden="true">11</span>
             <div>
               <p class="eyebrow">Final UI</p>
               <h2 id="ui-title">The redesign, screen by screen</h2>
               <p>Six screens carry most of the change. Each is shown with the decision it encodes — because in a government service the interface <em>is</em> the explanation. All screens are built and clickable in the <a href="index.html">live prototype</a>.</p>
             </div>
           </div>
-          <p class="screen-note" style="margin-top:-.6rem;margin-bottom:1.6rem">The frames below are simplified recreations of the live prototype, using the same tokens and demo data rather than screenshots. Open the prototype to test the real interactions, saved progress and failure branches.</p>
+          <nav class="screen-index" aria-label="Jump to one of the six screens">
+            <a href="#fig-01">01 · Entry</a>
+            <a href="#fig-02">02 · RTO</a>
+            <a href="#fig-03">03 · Photo</a>
+            <a href="#fig-04">04 · Status</a>
+            <a href="#fig-05">05 · Payment</a>
+            <a href="#fig-06">06 · Licence</a>
+          </nav>
+          <p class="screen-note" style="margin-top:.95rem;margin-bottom:1.6rem">The frames below are simplified recreations of the live prototype, using the same tokens and demo data rather than screenshots. Open the prototype to test the real interactions, saved progress and failure branches.</p>
 
           <!-- Screen 1 -->
-          <div class="screen-block">
+          <div class="screen-block" id="fig-01">
             <div class="screen-head">
               <div>
                 <h3>1 · Entry, continuity and honest expectations</h3>
                 <p>The Parivahan → Sarathi redirect is replaced by one continuous identity, a verified-domain signal, and a resume state that proves the applicant’s progress survived.</p>
               </div>
-              <span class="tag tag-ui">P1 · trust</span>
+              <div class="screen-labels"><span class="fig-no">Fig. 01</span><span class="tag tag-ui">P1 · trust</span></div>
             </div>
 
             <div class="frame">
@@ -809,13 +931,13 @@
           </div>
 
           <!-- Screen 2 -->
-          <div class="screen-block">
+          <div class="screen-block" id="fig-02">
             <div class="screen-head">
               <div>
                 <h3>2 · RTO recommendation by jurisdiction</h3>
                 <p>Selection becomes confirmation. The office is derived from the PIN code already submitted, shown on a map, and explained in a sentence the applicant can repeat to a parent.</p>
               </div>
-              <span class="tag tag-ui">P0 · wrong RTO</span>
+              <div class="screen-labels"><span class="fig-no">Fig. 02</span><span class="tag tag-ui">P0 · wrong RTO</span></div>
             </div>
 
             <div class="frame">
@@ -918,13 +1040,13 @@
           </div>
 
           <!-- Screen 3 -->
-          <div class="screen-block">
+          <div class="screen-block" id="fig-03">
             <div class="screen-head">
               <div>
                 <h3>3 · Guided photo upload with a fix in the same place</h3>
                 <p>The rules are shown before the picker, checked live as the file loads, and every failure names the rule, the actual value and the repair. The applicant never leaves the portal to find a resizer.</p>
               </div>
-              <span class="tag tag-ui">P0 · first-attempt success</span>
+              <div class="screen-labels"><span class="fig-no">Fig. 03</span><span class="tag tag-ui">P0 · first-attempt success</span></div>
             </div>
 
             <div class="frame">
@@ -1008,13 +1130,13 @@
           </div>
 
           <!-- Screen 4 -->
-          <div class="screen-block">
+          <div class="screen-block" id="fig-04">
             <div class="screen-head">
               <div>
                 <h3>4 · A status that answers the four questions</h3>
                 <p>“Under Scrutiny” becomes a plain-language state with a reason, an owner, a date and an explicit answer to “do I need to do anything?” — wrapped in a progress model that always shows what is left.</p>
               </div>
-              <span class="tag tag-ui">P0 · status limbo</span>
+              <div class="screen-labels"><span class="fig-no">Fig. 04</span><span class="tag tag-ui">P0 · status limbo</span></div>
             </div>
 
             <div class="frame">
@@ -1090,13 +1212,13 @@
           </div>
 
           <!-- Screen 5 -->
-          <div class="screen-block">
+          <div class="screen-block" id="fig-05">
             <div class="screen-head">
               <div>
                 <h3>5 · Payment that removes doubt, and failure that keeps it honest</h3>
                 <p>A successful payment names the amount, the application and the transaction, and keeps the receipt reachable forever. A failed payment says whether money left the account — the single most important sentence in the flow.</p>
               </div>
-              <span class="tag tag-ui">P1 · trust</span>
+              <div class="screen-labels"><span class="fig-no">Fig. 05</span><span class="tag tag-ui">P1 · trust</span></div>
             </div>
 
             <div class="frame">
@@ -1166,13 +1288,13 @@
           </div>
 
           <!-- Screen 6 -->
-          <div class="screen-block">
+          <div class="screen-block" id="fig-06">
             <div class="screen-head">
               <div>
                 <h3>6 · Completion with a next milestone, not a dead end</h3>
                 <p>The journey ends by answering “am I done?” — and then immediately reframes the next obligation (30 days of practice, then a permanent licence test) as a known, dated milestone instead of another surprise.</p>
               </div>
-              <span class="tag tag-ui">P2 · completion</span>
+              <div class="screen-labels"><span class="fig-no">Fig. 06</span><span class="tag tag-ui">P2 · completion</span></div>
             </div>
 
             <div class="frame">
@@ -1265,12 +1387,32 @@
             <strong>Why only six screens are annotated?</strong>
             <p class="small" style="margin-bottom:0">These are the moments where the research says journeys break. The remaining screens follow the same rules: one decision per screen, requirements before action, and a visible next step. <a href="index.html">Walk the full flow →</a></p>
           </div>
+          <div class="rule-title"><h3>Decision log</h3><span>What I chose, and what each choice cost</span></div>
+          <div class="table-scroll" tabindex="0">
+            <table class="cs-table">
+              <caption>Six decisions behind the six screens</caption>
+              <thead>
+                <tr><th scope="col">Decision</th><th scope="col">Alternative rejected</th><th scope="col">Why this way</th><th scope="col">Cost accepted</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>One continuous Saathi identity</td><td>Keep the Parivahan chrome and add a note</td><td>Entry confusion is a trust failure; one header removes the relay</td><td>Needs redirect and domain cooperation</td></tr>
+                <tr><td>Recommend the RTO from PIN and address</td><td>A free RTO list with help text</td><td>Jurisdiction is the real question; a list invites the wrong answer</td><td>Edge addresses need a fallback path</td></tr>
+                <tr><td>Show requirements before the file picker</td><td>Validate after upload</td><td>The hidden exam is the failure; prevention beats a better error</td><td>A denser screen and content to maintain</td></tr>
+                <tr><td>Four-field status: what, why, who, by when</td><td>Free-text statuses plus a glossary</td><td>A status that names an owner and a date cannot read as a verdict</td><td>Content operations must template every state</td></tr>
+                <tr><td>Receipt as a screen, not a toast</td><td>Success toast and an email</td><td>Proof has to be reachable after the session and the screenshot</td><td>One extra screen</td></tr>
+                <tr><td>Disclose the RTO visit upfront</td><td>Imply the whole journey is online</td><td>Expectation set early is a plan; discovered late, it is a betrayal</td><td>May reduce starts — accepted</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted" style="margin-top:.6rem">A decision only counts if its cost is named. Most of these were cheap to build and expensive to maintain; two needed institutional cooperation that a solo prototype cannot secure on its own.</p>
+
+          <p class="takeaway"><span>Takeaway</span> Every screen answers one question and leaves evidence that it did: the RTO confirmed, the photo accepted, the payment receipted, the licence issued.</p>
         </section>
 
-        <!-- ============================ 11 DESIGN SYSTEM ============================ -->
+        <!-- ============================ 12 DESIGN SYSTEM ============================ -->
         <section class="cs-section" id="system" aria-labelledby="system-title">
           <div class="section-head">
-            <span class="section-num" aria-hidden="true">11</span>
+            <span class="section-num" aria-hidden="true">12</span>
             <div>
               <p class="eyebrow">Design system</p>
               <h2 id="system-title">A small system built for reassurance</h2>
@@ -1421,10 +1563,10 @@
           </div>
         </section>
 
-        <!-- ============================ 12 ACCESSIBILITY ============================ -->
+        <!-- ============================ 13 ACCESSIBILITY ============================ -->
         <section class="cs-section" id="accessibility" aria-labelledby="access-title">
           <div class="section-head">
-            <span class="section-num" aria-hidden="true">12</span>
+            <span class="section-num" aria-hidden="true">13</span>
             <div>
               <p class="eyebrow">Accessibility</p>
               <h2 id="access-title">Built in, not audited on</h2>
@@ -1462,10 +1604,10 @@
           </div>
         </section>
 
-        <!-- ============================ 13 MEASUREMENT ============================ -->
+        <!-- ============================ 14 MEASUREMENT ============================ -->
         <section class="cs-section" id="measurement" aria-labelledby="measure-title">
           <div class="section-head">
-            <span class="section-num" aria-hidden="true">13</span>
+            <span class="section-num" aria-hidden="true">14</span>
             <div>
               <p class="eyebrow">Measurement</p>
               <h2 id="measure-title">What would prove this worked</h2>
@@ -1523,15 +1665,38 @@
             </div>
           </div>
 
+          <div class="rule-title"><h3>If this shipped</h3><span>What changes, and where you would see it</span></div>
+          <div class="impact">
+            <div class="impact-card">
+              <p class="who">For the applicant</p>
+              <h4>One sitting, no phone call</h4>
+              <p>Requirements arrive before the picker, the RTO is confirmed with evidence, and every status ends with an owner and a date.</p>
+              <p class="proof"><b>Would show up in:</b> independent completion rate, status understanding</p>
+            </div>
+            <div class="impact-card">
+              <p class="who">At the RTO desk</p>
+              <h4>Fewer avoidable arrivals</h4>
+              <p>Wrong-jurisdiction bookings and rejected photos stop being discovered at the counter, where they cost a day and a second visit.</p>
+              <p class="proof"><b>Would show up in:</b> wrong RTO rate, photo first-attempt success</p>
+            </div>
+            <div class="impact-card">
+              <p class="who">For the department</p>
+              <h4>Fewer repeat contacts</h4>
+              <p>Payment proof and a four-field status reduce “did my money go through?” and “what is happening?” calls to support.</p>
+              <p class="proof"><b>Would show up in:</b> payment confidence score, agent dependency</p>
+            </div>
+          </div>
+
           <div class="note" style="margin-top:1rem">
             <strong>Why no numbers are claimed yet.</strong> The prototype is a design artefact with synthetic data; it cannot generate a valid baseline. Reporting invented percentages would make this case study less useful, not more persuasive.
           </div>
+          <p class="takeaway"><span>Takeaway</span> If independence does not move, the redesign did not work — however good the screens look.</p>
         </section>
 
-        <!-- ============================ 14 REFLECTION ============================ -->
+        <!-- ============================ 15 REFLECTION ============================ -->
         <section class="cs-section" id="reflection" aria-labelledby="reflection-title">
           <div class="section-head">
-            <span class="section-num" aria-hidden="true">14</span>
+            <span class="section-num" aria-hidden="true">15</span>
             <div>
               <p class="eyebrow">Reflection</p>
               <h2 id="reflection-title">The problems were never technical</h2>
@@ -1607,6 +1772,7 @@
           <ul class="footer-links">
             <li><a href="#overview">Overview</a></li>
             <li><a href="#research">Research</a></li>
+            <li><a href="#explorations">Design directions</a></li>
             <li><a href="#reflection">Reflection &amp; next steps</a></li>
             <li><a href="#accessibility">Accessibility</a></li>
           </ul>
