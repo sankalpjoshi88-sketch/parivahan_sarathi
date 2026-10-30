@@ -1,0 +1,1641 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#062a63">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Redesigning the learner’s licence journey — UX/UI case study">
+  <meta property="og:description" content="Four interviews, seven failure themes and a 32-screen prototype: how clarity and trust, not new features, fix India’s learner’s licence application.">
+  <meta name="description" content="A research-led UX/UI case study of India's learner's licence journey on Parivahan Sarathi, with personas, journey mapping, wireframes, a 32-screen prototype and a design system.">
+  <title>Redesigning the learner's licence journey — UX/UI case study</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/case-study.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to case study</a>
+  <div class="read-progress" aria-hidden="true"><span id="read-progress"></span></div>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="cs-brand" href="#top" aria-label="Saathi case study, back to top">
+        <span class="cs-brand-mark" aria-hidden="true">S</span>
+        <span><strong>Saathi — UX/UI case study</strong><small>Learner’s licence · Parivahan Sarathi</small></span>
+      </a>
+      <div class="topbar-actions">
+        <a class="btn btn-quiet" href="index.html"><span class="long">Open live prototype</span><span class="short">Prototype</span> <span aria-hidden="true">↗</span></a>
+        <button class="btn btn-primary" id="print-btn" type="button"><span class="long">Print / save PDF</span><span class="short">Print</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================ COVER ============================ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Independent hackathon project · 2026</p>
+          <h1 id="hero-title">From “I need help to finish this” to <em>“I can do this myself.”</em></h1>
+          <p class="hero-sub">A research-led UX/UI case study of the learner’s licence application on India’s Parivahan → Sarathi portal: four interviews, seven recurring failure themes, and a 32-screen high-fidelity prototype designed so a first-time applicant never has to call a friend, an agent — or Google.</p>
+          <dl class="hero-meta">
+            <div><dt>Role</dt><dd>UX research, UI design, prototyping</dd></div>
+            <div><dt>Scope</dt><dd>End-to-end learner’s licence journey</dd></div>
+            <div><dt>Platform</dt><dd>Responsive web · 375 px → desktop</dd></div>
+            <div><dt>Deliverable</dt><dd>Case study + clickable 32-screen prototype</dd></div>
+          </dl>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#overview">Read the case study <span aria-hidden="true">↓</span></a>
+            <a class="btn" href="index.html">Try the prototype <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="hero-screens" role="img" aria-label="Three overlapping previews of the redesigned interface: a guided photo upload, an RTO recommendation and a plain-language application status.">
+          <article class="mini mini-card-a">
+            <div class="mini-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>saathi.gov.in/documents</span></div>
+            <div class="mini-body">
+              <div class="mini-appbar"><span class="mini-logo">S</span> Saathi</div>
+              <p class="mini-title">Upload your photograph</p>
+              <p class="mini-copy">Requirements are shown before you pick a file.</p>
+              <div class="mini-thumb">
+                <div class="mini-face" aria-hidden="true">🙂</div>
+                <div><b style="font-size:.58rem">aarav-photo.jpg</b><br><small>38 KB · 200 × 230 px</small></div>
+              </div>
+              <ul class="mini-checks">
+                <li>Plain light background</li>
+                <li>Face fills the frame</li>
+                <li>20–200 KB · JPG</li>
+              </ul>
+              <span class="mini-btn">Use this photo</span>
+            </div>
+          </article>
+
+          <article class="mini mini-card-b">
+            <div class="mini-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>saathi.gov.in/rto</span></div>
+            <div class="mini-body">
+              <div class="mini-appbar"><span class="mini-logo">S</span> Saathi</div>
+              <span class="mini-pill info">Step 3 of 6</span>
+              <p class="mini-title" style="margin-top:.35rem">Your RTO is DL-11 Rohini</p>
+              <p class="mini-copy">We matched your PIN code 110085 to this jurisdiction.</p>
+              <div class="mini-map" aria-hidden="true"></div>
+              <div class="mini-field"><span>DL-11 · Rohini</span><small>2.4 km</small></div>
+              <p class="mini-note">Not right? Change your address or pick another RTO before paying.</p>
+              <span class="mini-btn">Confirm this RTO</span>
+            </div>
+          </article>
+
+          <article class="mini mini-card-c">
+            <div class="mini-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>saathi.gov.in/status</span></div>
+            <div class="mini-body">
+              <div class="mini-appbar"><span class="mini-logo">S</span> Saathi</div>
+              <div style="display:flex;gap:.3rem;align-items:center;margin-bottom:.35rem">
+                <span class="mini-pill warn">In progress</span><span class="mini-pill info">No action needed</span>
+              </div>
+              <p class="mini-title">We’re checking your address proof</p>
+              <p class="mini-copy">This usually takes 3 working days. We’ll SMS you on 98XXXXXX42.</p>
+              <ul class="mini-timeline">
+                <li><span class="tick">✓</span><span><b>Documents received</b>28 Aug, 4:12 pm</span></li>
+                <li class="now"><span class="tick">→</span><span><b>Address proof check</b>Due by 2 Sep</span></li>
+                <li><span class="tick">3</span><span><b>Test slot booking</b>Opens after approval</span></li>
+              </ul>
+              <span class="mini-btn ghost">What happens next?</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap shell">
+      <!-- ============================ CONTENTS ============================ -->
+      <aside class="toc" aria-label="Case study contents">
+        <p class="toc-label">Contents</p>
+        <ol>
+          <li><a href="#overview"><span class="n">01</span> Overview</a></li>
+          <li><a href="#context"><span class="n">02</span> Context &amp; problem</a></li>
+          <li><a href="#research"><span class="n">03</span> Research</a></li>
+          <li><a href="#insights"><span class="n">04</span> Insights</a></li>
+          <li><a href="#journey"><span class="n">05</span> Journey</a></li>
+          <li><a href="#personas"><span class="n">06</span> Personas</a></li>
+          <li><a href="#direction"><span class="n">07</span> Direction</a></li>
+          <li><a href="#principles"><span class="n">08</span> Principles</a></li>
+          <li><a href="#wireframes"><span class="n">09</span> Wireframes</a></li>
+          <li><a href="#ui"><span class="n">10</span> Final UI</a></li>
+          <li><a href="#system"><span class="n">11</span> Design system</a></li>
+          <li><a href="#accessibility"><span class="n">12</span> Accessibility</a></li>
+          <li><a href="#measurement"><span class="n">13</span> Measurement</a></li>
+          <li><a href="#reflection"><span class="n">14</span> Reflection</a></li>
+        </ol>
+        <div class="toc-cta">
+          <a href="index.html">Open the prototype <span aria-hidden="true">↗</span><span>32 screens, hash-routed, no build step</span></a>
+          <a href="#" id="print-btn-2">Print this case study <span aria-hidden="true">↓</span><span>Save as PDF from the print dialog</span></a>
+        </div>
+      </aside>
+
+      <article class="cs-body">
+        <!-- ============================ 01 OVERVIEW ============================ -->
+        <section class="cs-section" id="overview" aria-labelledby="overview-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">01</span>
+            <div>
+              <p class="eyebrow">Overview</p>
+              <h2 id="overview-title">A five-minute form that takes five weeks to trust</h2>
+              <p>A learner’s licence is many Indians’ first contact with a government service as an adult. The Parivahan → Sarathi journey is technically online, but in practice it is completed with a parent on speakerphone, a friend cropping a photo, and a driving-school agent on WhatsApp. This case study starts from that gap between “available online” and “completable alone” — and designs the missing layer: guidance, proof and plain language.</p>
+            </div>
+          </div>
+
+          <div class="stats" role="list">
+            <div class="stat" role="listitem"><b>4</b><span>first-time applicants interviewed</span></div>
+            <div class="stat" role="listitem"><b>7</b><span>recurring failure themes, synthesised</span></div>
+            <div class="stat" role="listitem"><b>3</b><span>P0 problems taken into design</span></div>
+            <div class="stat" role="listitem"><b>32</b><span>high-fidelity screens in the prototype</span></div>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <p class="kicker">The problem</p>
+              <h3>Independence breaks at the edges</h3>
+              <p class="small">Aadhaar login works. The details form is fine. People fall out of the journey at the unglamorous edges: an unexplained photo rule, a wrong RTO, a status label that reads like a verdict.</p>
+            </div>
+            <div class="card">
+              <p class="kicker">The bet</p>
+              <h3>Clarity is the feature</h3>
+              <p class="small">Not a new portal, not more content. Show requirements before they bite, recommend the RTO from the PIN code, explain every status with an owner and a next action, and make payment proof durable.</p>
+            </div>
+            <div class="card">
+              <p class="kicker">The build</p>
+              <h3>A working, testable prototype</h3>
+              <p class="small">Research was translated into wireframes and then a responsive 32-screen prototype — saved progress, realistic edge cases and failure recovery — because a case study that stops at principles can’t be tested.</p>
+            </div>
+          </div>
+
+          <div class="status-strip" role="list" aria-label="Project status by phase">
+            <div role="listitem"><span class="s-icon" aria-hidden="true">✓</span><span><b>Research synthesis</b><span>4 interviews, 7 themes</span></span></div>
+            <div role="listitem"><span class="s-icon" aria-hidden="true">✓</span><span><b>Problem framing</b><span>Personas, journey, HMWs</span></span></div>
+            <div role="listitem"><span class="s-icon" aria-hidden="true">✓</span><span><b>UI &amp; prototype</b><span>32 screens, responsive</span></span></div>
+            <div class="pending" role="listitem"><span class="s-icon" aria-hidden="true">…</span><span><b>Usability testing</b><span>Plan defined, not yet run</span></span></div>
+          </div>
+
+          <div class="note" style="margin-top:1.2rem">
+            <strong>Honest scope note.</strong> This is a hackathon-scale project. The research base is four qualitative interviews synthesised in a FigJam board — enough to frame problems and provoke design, not enough to claim statistical confidence. No usability test has been run on the designs below yet; <a href="#measurement">section 13</a> sets out exactly how that will be measured instead of guessing.
+          </div>
+        </section>
+
+        <!-- ============================ 02 CONTEXT ============================ -->
+        <section class="cs-section" id="context" aria-labelledby="context-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">02</span>
+            <div>
+              <p class="eyebrow">Context &amp; problem</p>
+              <h2 id="context-title">High stakes, low guidance, no second attempt at a first impression</h2>
+              <p>Applying for a learner’s licence is a common, time-bound, money-bound service that most people use exactly once or twice in a lifetime. That makes it a poor candidate for “users will learn the interface”: there is no learning curve available, only drop-off, a wasted trip, or a dependency formed for life.</p>
+            </div>
+          </div>
+
+          <div class="grid-2" style="align-items:start">
+            <div class="card card-flat" style="background:#fdfbf6">
+              <p class="kicker" style="color:var(--red-800)">Primary problem statement</p>
+              <p style="font-family:var(--display);font-size:1.2rem;line-height:1.42;margin-bottom:1rem">First-time applicants struggle to complete the application independently because of unclear guidance, poor status communication, confusing RTO selection and low system trust — resulting in anxiety and heavy reliance on external help.</p>
+              <p class="small muted" style="margin-bottom:0">Everything below is a supporting failure of that one sentence, not a separate project.</p>
+            </div>
+            <div class="card card-flat">
+              <p class="kicker">Six supporting problems</p>
+              <ul class="small" style="margin:0;padding-left:1.1rem;display:grid;gap:.4rem;color:var(--ink-soft)">
+                <li>Users cannot confidently identify and trust the official portal.</li>
+                <li>Photo requirements and error messages are poorly communicated.</li>
+                <li>RTO selection does not match how people think about location.</li>
+                <li>Statuses do not explain meaning, owner or next action.</li>
+                <li>Payment flows create doubt about money and saved data.</li>
+                <li>The experience violates a first-timer’s mental model of “online”.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="rule-title"><h3>Who this is for, and what was in scope</h3><span>Hackathon constraints</span></div>
+          <div class="table-scroll" tabindex="0">
+            <table class="cs-table">
+              <caption>Project definition</caption>
+              <tbody>
+                <tr><th scope="row">Primary audience</th><td>First-time learner’s licence applicants, 18–24, mobile-first, completing the journey without paid help.</td></tr>
+                <tr><th scope="row">Secondary</th><td>Applicants stuck mid-application (“under scrutiny”), and people helping a family member finish.</td></tr>
+                <tr><th scope="row">In scope</th><td>Discovery, identity, details, RTO, documents, payment, test slot, online test, licence issue — plus failure and recovery states.</td></tr>
+                <tr><th scope="row">Out of scope</th><td>Backend integration, real identity or payment processing, policy change, native apps, regional languages beyond a language affordance.</td></tr>
+                <tr><th scope="row">Constraints</th><td>No build step, static hosting, no external services, no real personal data, accessible-by-default interaction patterns.</td></tr>
+                <tr><th scope="row">Success definition</th><td>A first-time applicant can finish the journey on a phone without external help, and always knows the next action.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout" style="margin-top:1.4rem">
+            <strong>Why this problem is worth designers’ time.</strong>
+            <p class="small" style="margin-bottom:0">The failures are not exotic. They are labels, sizes, defaults and confirmation screens. They are cheap to fix and unusually expensive to ignore: a wrong RTO costs a day’s leave and a 40 km round trip; a rejected photo costs a week of waiting; a payment that “may have failed” costs trust in every future government transaction.</p>
+          </div>
+        </section>
+
+        <!-- ============================ 03 RESEARCH ============================ -->
+        <section class="cs-section" id="research" aria-labelledby="research-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">03</span>
+            <div>
+              <p class="eyebrow">Research</p>
+              <h2 id="research-title">Four journeys, one repeated story</h2>
+              <p>Qualitative interviews focused on what people actually did — where they searched, what they screenshotted, whom they called — rather than what they thought of the interface. Observations were clustered into an affinity board, then reduced to themes with evidence attached.</p>
+            </div>
+          </div>
+
+          <div class="grid-4">
+            <div class="card card-flat"><p class="kicker">Method</p><h4>Semi-structured interviews</h4><p class="small muted" style="margin-bottom:0">Retrospective walkthrough focused on what people actually did, not what they thought of the UI.</p></div>
+            <div class="card card-flat"><p class="kicker">Method</p><h4>Journey mapping</h4><p class="small muted" style="margin-bottom:0">Stage-by-stage reconstruction of what was done, felt and needed.</p></div>
+            <div class="card card-flat"><p class="kicker">Method</p><h4>Affinity mapping</h4><p class="small muted" style="margin-bottom:0">Observations clustered in FigJam, then named as themes with severity.</p></div>
+            <div class="card card-flat"><p class="kicker">Method</p><h4>Portal observation</h4><p class="small muted" style="margin-bottom:0">Walking the live flow to verify where language and layout caused the friction described.</p></div>
+          </div>
+
+          <div class="rule-title"><h3>Participants</h3><span>n = 4 · deliberately varied devices and outcomes</span></div>
+          <div class="people">
+            <div class="person">
+              <span class="avatar" aria-hidden="true">R</span>
+              <b>Rohan</b><span>Student · mixed device</span>
+              <em>Photo upload and payment anxiety; used friends and third-party tools.</em>
+            </div>
+            <div class="person">
+              <span class="avatar alt" aria-hidden="true">Ri</span>
+              <b>Riya · 20</b><span>Gurgaon · mobile</span>
+              <em>Booked the wrong RTO and waited two hours at the centre.</em>
+            </div>
+            <div class="person">
+              <span class="avatar alt2" aria-hidden="true">T</span>
+              <b>Tamanna · 22</b><span>Gurgaon · laptop</span>
+              <em>Completed most steps, then stalled on “Under Scrutiny”.</em>
+            </div>
+            <div class="person">
+              <span class="avatar alt3" aria-hidden="true">A</span>
+              <b>Ajay · 19</b><span>Bomdila · phone → laptop</span>
+              <em>Search and branding confusion before reaching the right site.</em>
+            </div>
+          </div>
+
+          <div class="grid-2" style="margin-top:1.4rem;align-items:start">
+            <figure class="card card-flat" style="margin:0;background:#fdfbf6">
+              <blockquote class="quote">
+                <p>“I thought once I did Aadhaar verification it would all be online.”</p>
+                <footer>Riya, 20 — assumed digital identity meant no RTO visit</footer>
+              </blockquote>
+            </figure>
+            <figure class="card card-flat" style="margin:0;background:#fdfbf6">
+              <blockquote class="quote">
+                <p>“Why can’t the website tell me the exact photo size before I upload?”</p>
+                <footer>Rohan — photo rejected, then used an online tool he didn’t trust</footer>
+              </blockquote>
+            </figure>
+          </div>
+
+          <div class="callout" style="margin-top:1.4rem">
+            <strong>Research limitation, stated plainly.</strong>
+            <p class="small" style="margin-bottom:0">Four interviews in two locations, conducted as a hackathon sprint. The sample skews young, urban and English-literate. Findings should be read as strong hypotheses about first-time applicants — not as a representative study of all applicants, and not as a substitute for moderated testing with low-vision, low-literacy or regional-language users.</p>
+          </div>
+        </section>
+
+        <!-- ============================ 04 INSIGHTS ============================ -->
+        <section class="cs-section" id="insights" aria-labelledby="insights-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">04</span>
+            <div>
+              <p class="eyebrow">Synthesis</p>
+              <h2 id="insights-title">Seven themes that account for almost every drop-off</h2>
+              <p>Each theme survived clustering because it appeared across more than one interview and could be traced to a specific screen or message. Severity reflects the real-world cost of the failure, not how loudly it was described.</p>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <article class="insight is-p1">
+              <span class="num">01</span>
+              <h3>Discovery is a trust crisis</h3>
+              <p>Search results are crowded with ads and look-alike agents. The Parivahan → Sarathi redirect wipes the visual identity users had just verified, so they arrive unsure whether they are on the government site at all.</p>
+              <p class="why"><b>Evidence:</b> Ajay worked through several search results and look-alike sites before reaching the official one. <span class="tag tag-p1">P1</span></p>
+            </article>
+            <article class="insight is-p0">
+              <span class="num">02</span>
+              <h3>Photo upload is a hidden exam</h3>
+              <p>Dimension, size and background rules exist but appear only as a rejection. Errors don’t say which rule failed, so people leave the portal to find a tool that will “fix” the file.</p>
+              <p class="why"><b>Evidence:</b> Rohan’s photo was rejected, then he left the portal for a third-party resizer. <span class="tag tag-p0">P0</span></p>
+            </article>
+            <article class="insight is-p0">
+              <span class="num">03</span>
+              <h3>RTO selection asks the wrong question</h3>
+              <p>People choose by city or by the name they recognise. Jurisdiction is decided by address and PIN code, which the form never connects to the choice — so the error surfaces days later, at the centre.</p>
+              <p class="why"><b>Evidence:</b> Riya booked the wrong RTO and waited two hours at the centre. <span class="tag tag-p0">P0</span></p>
+            </article>
+            <article class="insight is-p0">
+              <span class="num">04</span>
+              <h3>“Under Scrutiny” is a dead end</h3>
+              <p>A status that names an internal process, with no owner, reason or next action. People cannot tell whether they made a mistake, whether they must act, or whether waiting is correct.</p>
+              <p class="why"><b>Evidence:</b> Tamanna refreshed repeatedly, unsure whether to wait, visit the RTO or involve an agent. <span class="tag tag-p0">P0</span></p>
+            </article>
+            <article class="insight is-p1">
+              <span class="num">05</span>
+              <h3>Payment anxiety outlives the payment</h3>
+              <p>Session timeouts and vague failures make people fear both losing money and losing data. Screenshotting a receipt becomes a workaround for a missing confirmation model.</p>
+              <p class="why"><b>Evidence:</b> Rohan kept a screenshot but could not say whether he had been charged. <span class="tag tag-p1">P1</span></p>
+            </article>
+            <article class="insight is-p1">
+              <span class="num">06</span>
+              <h3>The mental model is “fully online”</h3>
+              <p>Aadhaar plus a website reads as “no office visit”. The product never corrects that expectation early, so the eventual physical step feels like a broken promise rather than a planned milestone.</p>
+              <p class="why"><b>Evidence:</b> Riya and Rohan both assumed the test would be online-only. <span class="tag tag-p1">P1</span></p>
+            </article>
+            <article class="insight">
+              <span class="num">07</span>
+              <h3>Help is a symptom, not a feature</h3>
+              <p>Every workaround — family, friends, Google, resizing tools, agents — is a self-service gap that has been outsourced to a human. Dependency is the outcome the interface is quietly designing for.</p>
+              <p class="why"><b>Evidence:</b> All four participants used at least one external helper. <span class="tag tag-p2">Cross-cutting</span></p>
+            </article>
+            <div class="card card-flat" style="background:#fdfbf6;align-self:stretch;display:grid;align-content:center">
+              <p class="kicker" style="color:var(--amber-900)">The synthesis, in one line</p>
+              <p style="font-family:var(--display);font-size:1.3rem;line-height:1.4;margin-bottom:.6rem">The portal explains the process to itself, not to a person doing it for the first time.</p>
+              <p class="small muted" style="margin-bottom:0">That reframing is what turned a list of complaints into a design brief: every screen must answer <em>where am I, what is this, and what happens next?</em></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================ 05 JOURNEY ============================ -->
+        <section class="cs-section" id="journey" aria-labelledby="journey-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">05</span>
+            <div>
+              <p class="eyebrow">Journey mapping</p>
+              <h2 id="journey-title">Confidence peaks at login, then falls off a cliff</h2>
+              <p>Plotting emotional confidence against the nine stages of the current journey exposes the real shape of the problem: the portal earns trust during Aadhaar verification, then spends it on upload rules, jurisdiction and an unreadable status label. Relief arrives only when someone else takes over.</p>
+            </div>
+          </div>
+
+          <figure class="journey-figure">
+            <div class="journey-scroll" tabindex="0" role="region" aria-label="Emotional journey chart, scrollable">
+              <svg class="journey-svg" viewBox="0 0 1080 330" role="img" aria-labelledby="journey-svg-title journey-svg-desc">
+                <title id="journey-svg-title">Emotional confidence across the learner's licence journey</title>
+                <desc id="journey-svg-desc">The current journey starts hopeful, drops sharply during photo upload and payment, reaches its lowest point while tracking an unclear status, and only recovers when the applicant seeks outside help. A dashed line shows the intended experience: confidence that stays high because every step is explained.</desc>
+                <defs>
+                  <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#9b2935" stop-opacity=".18"/>
+                    <stop offset="1" stop-color="#9b2935" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+
+                <!-- confidence bands -->
+                <rect x="50" y="30" width="950" height="100" fill="#f3f8f3"/>
+                <rect x="50" y="130" width="950" height="70" fill="#fcf8ee"/>
+                <rect x="50" y="200" width="950" height="60" fill="#fcf1f2"/>
+                <text x="1010" y="60" font-size="9.5" fill="#7c8a80" font-weight="700" letter-spacing=".12em">CONFIDENT</text>
+                <text x="1010" y="168" font-size="9.5" fill="#9a8b6c" font-weight="700" letter-spacing=".12em">UNCERTAIN</text>
+                <text x="1010" y="232" font-size="9.5" fill="#a98a8e" font-weight="700" letter-spacing=".12em">ANXIOUS</text>
+
+                <!-- grid -->
+                <g stroke="#d8d3c7" stroke-width="1" stroke-dasharray="3 4">
+                  <line x1="50" y1="80" x2="1000" y2="80"/>
+                  <line x1="50" y1="180" x2="1000" y2="180"/>
+                </g>
+                <line x1="50" y1="260" x2="1000" y2="260" stroke="#c9c3b5"/>
+
+                <!-- as-is area + line -->
+                <path d="M70 110 L182 155 L294 97 L406 175 L518 200 L630 180 L742 215 L854 225 L966 90 L966 260 L70 260 Z" fill="url(#areaFill)"/>
+                <path d="M70 110 L182 155 L294 97 L406 175 L518 200 L630 180 L742 215 L854 225 L966 90"
+                      fill="none" stroke="#9b2935" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/>
+
+                <!-- to-be, dashed -->
+                <path d="M70 90 L182 80 L294 72 L406 82 L518 78 L630 80 L742 85 L854 75 L966 55"
+                      fill="none" stroke="#0969da" stroke-width="2.6" stroke-dasharray="7 6" stroke-linejoin="round" stroke-linecap="round"/>
+
+                <!-- as-is points -->
+                <g stroke="#fff" stroke-width="2.5">
+                  <circle cx="70" cy="110" r="6" fill="#2f8f5b"/>
+                  <circle cx="182" cy="155" r="6" fill="#c9860e"/>
+                  <circle cx="294" cy="97" r="6" fill="#2f8f5b"/>
+                  <circle cx="406" cy="175" r="6" fill="#9b2935"/>
+                  <circle cx="518" cy="200" r="6" fill="#9b2935"/>
+                  <circle cx="630" cy="180" r="6" fill="#9b2935"/>
+                  <circle cx="742" cy="215" r="6.5" fill="#9b2935"/>
+                  <circle cx="854" cy="225" r="6" fill="#9b2935"/>
+                  <circle cx="966" cy="90" r="6" fill="#2f8f5b"/>
+                </g>
+                <circle cx="742" cy="215" r="13" fill="none" stroke="#9b2935" stroke-width="1.4" stroke-dasharray="3 3" opacity=".7"/>
+
+                <!-- stage labels -->
+                <g font-size="10.5" fill="#4a5568" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif">
+                  <text x="70" y="288">Search for</text><text x="70" y="301">official portal</text>
+                  <text x="182" y="288">Parivahan →</text><text x="182" y="301">Sarathi redirect</text>
+                  <text x="294" y="288">Aadhaar +</text><text x="294" y="301">OTP login</text>
+                  <text x="406" y="288">Photo &amp;</text><text x="406" y="301">document upload</text>
+                  <text x="518" y="288">Pay</text><text x="518" y="301">application fee</text>
+                  <text x="630" y="288">Choose RTO &amp;</text><text x="630" y="301">book slot</text>
+                  <text x="742" y="288">Track status</text><text x="742" y="301">“Under Scrutiny”</text>
+                  <text x="854" y="288">Ask family,</text><text x="854" y="301">friend or agent</text>
+                  <text x="966" y="288">RTO visit /</text><text x="966" y="301">external help</text>
+                </g>
+              </svg>
+            </div>
+            <ul class="journey-legend">
+              <li><span class="legend-line" aria-hidden="true"></span> Current experience</li>
+              <li><span class="legend-line dashed" aria-hidden="true"></span> Intended experience after redesign</li>
+              <li><span class="legend-line band" aria-hidden="true"></span> Confidence bands, reconstructed from interviews</li>
+            </ul>
+            <figcaption class="small muted" style="margin-top:.7rem">Confidence is a qualitative reconstruction from four retrospective interviews, not a measured score. It is used to compare stages within one journey, not as a statistic.</figcaption>
+          </figure>
+
+          <div class="moments">
+            <div class="moment">
+              <span class="tag tag-p0">Moment 1</span>
+              <b>“Your photo was rejected.”</b>
+              <span>The first hard stop. No rule named, no example shown, no way to fix it in the portal — the applicant leaves and may not return on the same device.</span>
+            </div>
+            <div class="moment">
+              <span class="tag tag-p0">Moment 2</span>
+              <b>“Which RTO do I pick?”</b>
+              <span>A city list that looks like a location question but is really a jurisdiction question. The cost of a wrong answer is hidden until the appointment.</span>
+            </div>
+            <div class="moment">
+              <span class="tag tag-p0">Moment 3</span>
+              <b>“Under Scrutiny.”</b>
+              <span>Two words, no owner, no date, no action. The user cannot distinguish “you made a mistake” from “we are working on it”.</span>
+            </div>
+          </div>
+
+          <div class="rule-title"><h3>The current journey, end to end</h3><span>As captured in interviews</span></div>
+          <ol class="small flow-list">
+            <li>Search Google, dodge ads and unofficial agents.</li>
+            <li>Land on Parivahan, get redirected to Sarathi.</li>
+            <li>Sign up or log in with Aadhaar and OTP.</li>
+            <li>Fill personal details — comparatively smooth.</li>
+            <li>Upload photo and documents — high friction.</li>
+            <li>Pay the fee — high anxiety, unclear failure.</li>
+            <li>Select RTO and appointment — often wrong.</li>
+            <li>Track status — meanings unclear.</li>
+            <li>Liveness check at the RTO — more friction.</li>
+            <li>Ask family, friends, Google or an agent.</li>
+          </ol>
+        </section>
+
+        <!-- ============================ 06 PERSONAS ============================ -->
+        <section class="cs-section" id="personas" aria-labelledby="personas-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">06</span>
+            <div>
+              <p class="eyebrow">Personas</p>
+              <h2 id="personas-title">Three people, three ways to fail the same form</h2>
+              <p>These are not demographic composites for their own sake. Each persona isolates a different failure mechanism — expectation, rules, and limbo — so that design decisions can be argued against a specific person rather than “users”.</p>
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <article class="persona">
+              <div class="persona-head">
+                <p class="role">Primary · mobile-first</p>
+                <h3>Riya, 20</h3>
+                <p class="meta" style="margin:0">Gurgaon · student · first licence</p>
+              </div>
+              <div class="persona-body">
+                <blockquote class="persona-quote">“I thought once I did Aadhaar verification it would all be online.”</blockquote>
+                <dl>
+                  <dt>Goal</dt>
+                  <dd>Finish everything from her phone and avoid a government office entirely.</dd>
+                  <dt>Behaviour</dt>
+                  <dd>Chooses by city name, trusts the first official-looking result, screenshots every confirmation.</dd>
+                  <dt>Blocked by</dt>
+                  <dd>A wrong RTO booking, a rejected photo, and a status she can’t interpret.</dd>
+                </dl>
+              </div>
+              <div class="persona-foot">
+                <span class="tag tag-p0">Wrong RTO</span>
+                <span class="tag tag-p0">Photo</span>
+                <span class="tag">Mental model</span>
+              </div>
+            </article>
+
+            <article class="persona">
+              <div class="persona-head">
+                <p class="role">Secondary · rule-follower</p>
+                <h3>Rohan</h3>
+                <p class="meta" style="margin:0">Student · phone and laptop · first licence</p>
+              </div>
+              <div class="persona-body">
+                <blockquote class="persona-quote">“Why can’t the website tell me the exact photo size before I upload?”</blockquote>
+                <dl>
+                  <dt>Goal</dt>
+                  <dd>Do it correctly, once, without asking anyone for help.</dd>
+                  <dt>Behaviour</dt>
+                  <dd>Reads instructions carefully, follows them, and is defeated by requirements that appear only as errors.</dd>
+                  <dt>Blocked by</dt>
+                  <dd>Unstated photo rules, payment ambiguity, and liveness-check anxiety.</dd>
+                </dl>
+              </div>
+              <div class="persona-foot">
+                <span class="tag tag-p0">Photo rules</span>
+                <span class="tag tag-p1">Payment</span>
+                <span class="tag tag-p2">Liveness</span>
+              </div>
+            </article>
+
+            <article class="persona">
+              <div class="persona-head">
+                <p class="role">Secondary · stuck mid-flow</p>
+                <h3>Tamanna, 22</h3>
+                <p class="meta" style="margin:0">Gurgaon · laptop · first licence</p>
+              </div>
+              <div class="persona-body">
+                <blockquote class="persona-quote">“It said under scrutiny. I didn’t know if I made a mistake or if I just had to wait.”</blockquote>
+                <dl>
+                  <dt>Goal</dt>
+                  <dd>Know whether to wait, fix something, or go to the RTO.</dd>
+                  <dt>Behaviour</dt>
+                  <dd>Refreshes repeatedly, re-reads the same label, then looks for a phone number or an agent.</dd>
+                  <dt>Blocked by</dt>
+                  <dd>A status with no explanation, no owner, no date and no next action.</dd>
+                </dl>
+              </div>
+              <div class="persona-foot">
+                <span class="tag tag-p0">Status limbo</span>
+                <span class="tag tag-p1">Trust</span>
+                <span class="tag tag-p2">Recovery</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="note" style="margin-top:1.2rem">
+            <strong>What the personas forced into the design:</strong> an early, honest explanation of what happens online vs. at the RTO (Riya); requirements shown before the file picker, not after (Rohan); and a status model where every label carries a reason, an owner, a date and a next action (Tamanna).
+          </div>
+        </section>
+
+        <!-- ============================ 07 DIRECTION ============================ -->
+        <section class="cs-section" id="direction" aria-labelledby="direction-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">07</span>
+            <div>
+              <p class="eyebrow">Problem framing</p>
+              <h2 id="direction-title">Prioritised by the cost of getting it wrong</h2>
+              <p>Priority is assigned by real-world consequence, not by how visible a screen is. A wrong RTO costs a day; a wrong status costs trust; a confusing brand costs the whole session before it starts.</p>
+            </div>
+          </div>
+
+          <div class="table-scroll" tabindex="0">
+            <table class="cs-table">
+              <caption>Pain points, ranked</caption>
+              <thead>
+                <tr><th scope="col">Priority</th><th scope="col">Pain point</th><th scope="col">Real-world impact</th><th scope="col">Design response</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="tag tag-p0">P0</span></td><td>Wrong RTO selection</td><td>Wasted travel and leave, restart risk</td><td>PIN/address recommendation, map proof, explicit confirmation</td></tr>
+                <tr><td><span class="tag tag-p0">P0</span></td><td>Photo upload failures</td><td>Drop-off, third-party tools, dependency</td><td>Requirements first, live checks, field-specific errors</td></tr>
+                <tr><td><span class="tag tag-p0">P0</span></td><td>Unclear status (“Under Scrutiny”)</td><td>Anxiety, agent use, repeated calls</td><td>Plain-language status with owner, date and next action</td></tr>
+                <tr><td><span class="tag tag-p1">P1</span></td><td>Payment anxiety and vague errors</td><td>Fear of lost money, duplicate payment</td><td>Unambiguous success, durable receipt, data-safety reassurance</td></tr>
+                <tr><td><span class="tag tag-p1">P1</span></td><td>Branding and entry confusion</td><td>Early drop-off, unofficial intermediaries</td><td>One continuous official identity and verified-domain signal</td></tr>
+                <tr><td><span class="tag tag-p2">P2</span></td><td>Liveness check failures</td><td>Extra RTO visits, rebooking</td><td>Pre-check guidance and a recoverable failure path</td></tr>
+                <tr><td><span class="tag tag-p2">P2</span></td><td>No clear “Am I done?” state</td><td>Uncertainty after submission</td><td>Explicit completion plus the next milestone and date</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="rule-title"><h3>How might we…</h3><span>Eight questions carried into design</span></div>
+          <div class="grid-2">
+            <div class="card card-flat"><p class="kicker">Discovery</p><h4>…help users find and trust the official portal in one search?</h4><p class="small muted" style="margin-bottom:0">Answer with a verified-domain marker and one continuous visual identity.</p></div>
+            <div class="card card-flat"><p class="kicker">Photo upload</p><h4>…help users submit an acceptable photo on the first attempt?</h4><p class="small muted" style="margin-bottom:0">Answer with requirements before the picker, then live, per-rule validation.</p></div>
+            <div class="card card-flat"><p class="kicker">RTO selection</p><h4>…guide users to the correct RTO by jurisdiction, not city name?</h4><p class="small muted" style="margin-bottom:0">Answer with a PIN-based recommendation, a map, and a confirmation moment.</p></div>
+            <div class="card card-flat"><p class="kicker">Branding</p><h4>…reduce confusion when Parivahan hands over to Sarathi?</h4><p class="small muted" style="margin-bottom:0">Answer with one continuous identity and a verified-official marker that persists across the handover.</p></div>
+            <div class="card card-flat"><p class="kicker">Status</p><h4>…make every status explain itself and name the next action?</h4><p class="small muted" style="margin-bottom:0">Answer with a four-part status: what, why, who, by when.</p></div>
+            <div class="card card-flat"><p class="kicker">Progress</p><h4>…give users a constant sense of where they are and what is left?</h4><p class="small muted" style="margin-bottom:0">Answer with a persistent progress strip, repeated in words: “2 of 5 steps done”.</p></div>
+            <div class="card card-flat"><p class="kicker">Payment</p><h4>…eliminate payment anxiety and provide lasting proof?</h4><p class="small muted" style="margin-bottom:0">Answer with a strong success state, receipt access and clear failure semantics.</p></div>
+            <div class="card card-flat"><p class="kicker">Independence</p><h4>…let a first-timer finish without family, friends or agents?</h4><p class="small muted" style="margin-bottom:0">Answer by designing self-service recovery instead of a helpline as the fallback.</p></div>
+          </div>
+        </section>
+
+        <!-- ============================ 08 PRINCIPLES ============================ -->
+        <section class="cs-section" id="principles" aria-labelledby="principles-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">08</span>
+            <div>
+              <p class="eyebrow">Design principles</p>
+              <h2 id="principles-title">Six rules that settled arguments</h2>
+              <p>Principles are only useful if they can veto a decision. These were written to be specific enough to point at a screen and say “that breaks rule four”.</p>
+            </div>
+          </div>
+
+          <div class="principles">
+            <div class="principle">
+              <h3>Clarity over cleverness</h3>
+              <p>Plain words, one idea per screen, no internal vocabulary. “Under Scrutiny” becomes “We’re checking your address proof”. If a label needs a glossary, it is the wrong label.</p>
+            </div>
+            <div class="principle">
+              <h3>Prevent errors before they happen</h3>
+              <p>Requirements appear before the file picker. The RTO is recommended from the address already entered. Confirmation is a deliberate screen, not a toast.</p>
+            </div>
+            <div class="principle">
+              <h3>Make trust visible</h3>
+              <p>Official identity is continuous from search to receipt. Every irreversible action — payment, submission, slot booking — produces evidence the user can keep.</p>
+            </div>
+            <div class="principle">
+              <h3>Match the mental model</h3>
+              <p>Say early what happens online and what happens at the RTO. The physical step is a planned milestone, not a surprise. Progress is expressed in the user’s words, not the system’s.</p>
+            </div>
+            <div class="principle">
+              <h3>Design for independence</h3>
+              <p>Every screen must be completable alone on a phone. If a step needs a different file, a bigger screen or a human, the interface must say so before the user is stuck.</p>
+            </div>
+            <div class="principle">
+              <h3>Always show the next step</h3>
+              <p>No dead ends and no ambiguous states. Every status, error and confirmation ends with an action, a date, or an explicit “nothing to do”.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================ 09 WIREFRAMES ============================ -->
+        <section class="cs-section" id="wireframes" aria-labelledby="wireframes-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">09</span>
+            <div>
+              <p class="eyebrow">Low-fidelity wireframes</p>
+              <h2 id="wireframes-title">Three P0 flows, sketched before pixels</h2>
+              <p>Wireframes were used to test the <em>structure of the reassurance</em>, not the layout: where the explanation sits, what the error says, and what the user can do next. All three flows keep a single action per screen and put the reason beside the decision.</p>
+            </div>
+          </div>
+
+          <div class="wire-grid">
+            <figure class="wire">
+              <div class="wire-label"><span>Flow A · RTO</span><span class="tag tag-p0">P0</span></div>
+              <div class="sk h1 w70"></div>
+              <div class="sk w85"></div>
+              <div class="sk-row"><span class="sk-chip"></span><span class="sk-chip"></span><span class="sk-chip" style="background:#dcd6c8"></span></div>
+              <div class="sk-box">
+                <div class="sk w40"></div>
+                <div class="sk-box tall" style="display:grid;place-items:center;background:#f2efe7">
+                  <span class="sk-note">map + jurisdiction pin</span>
+                </div>
+                <div class="sk-row"><span class="sk w55" style="background:#cfc7b6"></span><span class="sk-btn"></span></div>
+              </div>
+              <div class="sk-box">
+                <div class="sk w70"></div>
+                <div class="sk w100" style="height:.35rem"></div>
+                <div class="sk w55" style="height:.35rem"></div>
+              </div>
+              <span class="sk-anno">Why this RTO</span>
+              <span class="sk-anno">Explicit confirm</span>
+              <figcaption>PIN → recommended office → map proof → confirm. A wrong option stays visible but is labelled as not covering the PIN.</figcaption>
+            </figure>
+
+            <figure class="wire">
+              <div class="wire-label"><span>Flow B · Photo</span><span class="tag tag-p0">P0</span></div>
+              <div class="sk h1 w70"></div>
+              <div class="sk-row"><span class="sk-chip"></span><span class="sk-chip"></span><span class="sk-chip"></span></div>
+              <div class="sk-box">
+                <div class="sk-row" style="align-items:flex-start">
+                  <div style="width:3.2rem;height:4rem;border:1px dashed #b8b0a0;background:#efece3;flex:none"></div>
+                  <div style="display:grid;gap:.3rem;flex:1">
+                    <div class="sk w85"></div><div class="sk w70"></div><div class="sk w55"></div><div class="sk w40"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="sk-box" style="border-color:#d9b3b8;background:#fdf5f5">
+                <div class="sk w70" style="background:#d9b3b8"></div>
+                <div class="sk w100" style="height:.35rem;background:#e6cfd2"></div>
+                <div class="sk-row"><span class="sk-btn"></span><span class="sk-btn" style="background:#e6cfd2"></span></div>
+              </div>
+              <span class="sk-anno">Rules before picker</span>
+              <span class="sk-anno">Fix in place</span>
+              <figcaption>Requirements first, then live per-rule checks. The error names the failing rule, the actual value and the fix — no external tool.</figcaption>
+            </figure>
+
+            <figure class="wire">
+              <div class="wire-label"><span>Flow C · Status</span><span class="tag tag-p0">P0</span></div>
+              <div class="sk h1 w55"></div>
+              <div class="sk-box" style="background:#fdf6e7;border-color:#e3cb95">
+                <div class="sk w85" style="background:#dcc79a"></div>
+                <div class="sk w70" style="height:.35rem;background:#e6d5b2"></div>
+                <div class="sk w40" style="height:.35rem;background:#e6d5b2"></div>
+              </div>
+              <div class="sk-row" style="justify-content:space-between"><span class="sk w55" style="height:.35rem"></span><span class="sk w40" style="height:.35rem"></span></div>
+              <div class="sk-box">
+                <div class="sk-row"><span style="width:.6rem;height:.6rem;border-radius:50%;background:#b6ad9b"></span><div class="sk w70"></div></div>
+                <div class="sk-row"><span style="width:.6rem;height:.6rem;border-radius:50%;background:#8d9bb4"></span><div class="sk w85"></div></div>
+                <div class="sk-row"><span style="width:.6rem;height:.6rem;border-radius:50%;background:#d8d2c4"></span><div class="sk w55"></div></div>
+              </div>
+              <span class="sk-anno">What · who · by when</span>
+              <span class="sk-anno">“No action needed”</span>
+              <figcaption>Status as an answer to four questions: what is happening, why, who owns it, by when — plus whether the user must do anything.</figcaption>
+            </figure>
+          </div>
+
+          <div class="grid-2" style="margin-top:1.4rem">
+            <div class="card card-flat">
+              <p class="kicker">What changed between sketch and build</p>
+              <ul class="small" style="margin:0;padding-left:1.1rem;display:grid;gap:.4rem;color:var(--ink-soft)">
+                <li>RTO moved <em>after</em> the address step, so the PIN code is already known.</li>
+                <li>Photo checks became a checklist that fills in live, not a single pass/fail.</li>
+                <li>“Under Scrutiny” was retired as a user-facing phrase; it survives only as an internal note in the timeline.</li>
+                <li>Every flow gained an exit: <em>change</em>, <em>fix</em>, or <em>get help with this step</em>.</li>
+              </ul>
+            </div>
+            <div class="card card-flat" style="background:#fdfbf6">
+              <p class="kicker">Constraint checks</p>
+              <ul class="small" style="margin:0;padding-left:1.1rem;display:grid;gap:.4rem;color:var(--ink-soft)">
+                <li>No step depends on a file the applicant can’t produce on a phone.</li>
+                <li>Every recommendation is explainable in one sentence (“covers your PIN code”).</li>
+                <li>Failure states model real causes seen in interviews: size, dimensions, jurisdiction, session timeout.</li>
+                <li>No dark patterns: no urgency timers, no pre-ticked consents, no forced agent hand-off.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================ 10 FINAL UI ============================ -->
+        <section class="cs-section" id="ui" aria-labelledby="ui-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">10</span>
+            <div>
+              <p class="eyebrow">Final UI</p>
+              <h2 id="ui-title">The redesign, screen by screen</h2>
+              <p>Six screens carry most of the change. Each is shown with the decision it encodes — because in a government service the interface <em>is</em> the explanation. All screens are built and clickable in the <a href="index.html">live prototype</a>.</p>
+            </div>
+          </div>
+
+          <!-- Screen 1 -->
+          <div class="screen-block">
+            <div class="screen-head">
+              <div>
+                <h3>1 · Entry, continuity and honest expectations</h3>
+                <p>The Parivahan → Sarathi redirect is replaced by one continuous identity, a verified-domain signal, and a resume state that proves the applicant’s progress survived.</p>
+              </div>
+              <span class="tag tag-ui">P1 · trust</span>
+            </div>
+
+            <div class="frame">
+              <div class="frame-bar">
+                <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                <span class="frame-url"><span class="lock" aria-hidden="true">🔒</span> saathi.gov.in/learner-licence</span>
+              </div>
+              <div class="frame-body">
+                <div class="mk" aria-hidden="true">
+                  <div class="mk-header">
+                    <div class="mk-brand"><span class="mk-logo">S</span><span>Saathi<small>Transport Department, Delhi</small></span></div>
+                    <span class="gov">✓ Official site</span>
+                  </div>
+                  <nav class="mk-nav"><span class="on">Learner’s licence</span><span>My application</span><span>Documents</span><span>Fees</span><span>Help</span></nav>
+                  <div class="mk-main">
+                    <div class="mk-crumbs">Home › Driving licence › <b>Learner’s licence</b></div>
+                    <div class="mk-page-head">
+                      <div>
+                        <h3 class="mk-title">Apply for a learner’s licence</h3>
+                        <p class="mk-sub">Delhi · Faceless online route · about 12 minutes · saved on this device</p>
+                      </div>
+                      <span class="mk-chip ok">✓ Progress saved 4 min ago</span>
+                    </div>
+                    <ol class="mk-stepper">
+                      <li class="done"><span>Details</span></li>
+                      <li class="done"><span>Documents</span></li>
+                      <li class="now"><span>Review</span></li>
+                      <li><span>Payment</span></li>
+                      <li><span>Test slot</span></li>
+                      <li><span>Licence</span></li>
+                    </ol>
+                    <div class="mk-grid2">
+                      <div class="mk-card">
+                        <h4>Continue where you left off <span class="mk-chip info">Recommended</span></h4>
+                        <p class="hint">Application DL-LL-2026-081452 was last saved 4 minutes ago.</p>
+                        <div class="mk-kv" style="margin-bottom:.55rem">
+                          <div><span>Next step</span><b>Review &amp; submit</b></div>
+                          <div><span>Time left</span><b>About 6 minutes</b></div>
+                        </div>
+                        <div class="mk-row"><span class="mk-btn">Resume application →</span><span class="mk-btn ghost">Start again</span></div>
+                      </div>
+                      <div class="mk-card">
+                        <h4>What you’ll need</h4>
+                        <ul class="mk-ticks" style="grid-template-columns:1fr">
+                          <li>Aadhaar-linked mobile</li>
+                          <li>Address proof (PDF/JPG)</li>
+                          <li>Photo &amp; signature</li>
+                          <li>₹275 for fee and test</li>
+                        </ul>
+                        <div class="mk-banner" style="margin-top:.5rem"><span class="b-icon">i</span><p>This route is online, except <b>one RTO visit</b> for the driving test after 30 days of practice.</p></div>
+                      </div>
+                    </div>
+                    <div class="mk-banner green"><span class="b-icon">✓</span><p><b>You are on the official Government of India service.</b> No agent needs your Aadhaar OTP, and no one will ask you to pay outside this portal.</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ol class="annotations">
+              <li><span><b>One identity, no relay.</b> The Parivahan and Sarathi brands are merged into a single header so a redirect never looks like a detour.</span></li>
+              <li><span><b>A verified marker that means something.</b> “Official site” sits next to the domain, not in a footer disclaimer users never scroll to.</span></li>
+              <li><span><b>Resume is the primary action.</b> Saved state is visible before the user re-enters anything, which removes the “did I lose it?” panic.</span></li>
+              <li><span><b>Expectations set at the door.</b> The single RTO visit is disclosed before the first field, so it lands as a plan rather than a betrayal.</span></li>
+            </ol>
+            <p class="screen-note">Transparency trade-off: telling people about the RTO visit early may reduce starts. That is the right trade — the drop-off exists anyway, just later and more expensively.</p>
+          </div>
+
+          <!-- Screen 2 -->
+          <div class="screen-block">
+            <div class="screen-head">
+              <div>
+                <h3>2 · RTO recommendation by jurisdiction</h3>
+                <p>Selection becomes confirmation. The office is derived from the PIN code already submitted, shown on a map, and explained in a sentence the applicant can repeat to a parent.</p>
+              </div>
+              <span class="tag tag-ui">P0 · wrong RTO</span>
+            </div>
+
+            <div class="frame">
+              <div class="frame-bar">
+                <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                <span class="frame-url"><span class="lock" aria-hidden="true">🔒</span> saathi.gov.in/learner-licence/rto</span>
+              </div>
+              <div class="frame-body">
+                <div class="mk" aria-hidden="true">
+                  <div class="mk-header">
+                    <div class="mk-brand"><span class="mk-logo">S</span><span>Saathi<small>Transport Department, Delhi</small></span></div>
+                    <span class="gov">✓ Official site</span>
+                  </div>
+                  <nav class="mk-nav"><span class="on">Learner’s licence</span><span>My application</span><span>Documents</span><span>Fees</span><span>Help</span></nav>
+                  <div class="mk-main">
+                    <div class="mk-crumbs">Home › Learner’s licence › Details › <b>RTO</b></div>
+                    <div class="mk-page-head">
+                      <div>
+                        <h3 class="mk-title">Confirm your RTO</h3>
+                        <p class="mk-sub">We matched your address to the office that covers your PIN code.</p>
+                      </div>
+                      <span class="mk-chip info">Step 3 of 6</span>
+                    </div>
+                    <ol class="mk-stepper">
+                      <li class="done"><span>Details</span></li>
+                      <li class="done"><span>Documents</span></li>
+                      <li class="now"><span>RTO</span></li>
+                      <li><span>Payment</span></li>
+                      <li><span>Test slot</span></li>
+                      <li><span>Licence</span></li>
+                    </ol>
+                    <div class="mk-grid2">
+                      <div style="display:grid;gap:.55rem">
+                        <div class="mk-card">
+                          <h4>Address on this application <span class="mk-chip" style="background:#fff;border-color:#cfd8e6">Change</span></h4>
+                          <p class="hint" style="margin:0">42, Sample Residency, Rohini, North West Delhi — <b style="color:var(--ink)">110085</b></p>
+                        </div>
+                        <div class="mk-card">
+                          <h4>Recommended for your PIN code</h4>
+                          <p class="hint">Based on jurisdiction notified for 110085.</p>
+                          <div style="border:1px solid var(--blue-800);background:#f7fbff;border-radius:.4rem;padding:.55rem;box-shadow:0 0 0 2px var(--blue-100)">
+                            <div class="mk-row" style="justify-content:space-between;flex-wrap:nowrap">
+                              <div style="display:flex;gap:.4rem;align-items:flex-start">
+                                <span style="width:.7rem;height:.7rem;border-radius:50%;border:3px solid var(--blue-800);background:#fff;margin-top:.15rem;flex:none"></span>
+                                <div>
+                                  <b style="font-size:.72rem">DL-11 · Rohini Zonal Office</b>
+                                  <div style="font-size:.6rem;color:var(--muted)">2.4 km from your PIN · Covers 110085</div>
+                                </div>
+                              </div>
+                              <span class="mk-chip ok">Best match</span>
+                            </div>
+                          </div>
+                          <div style="border:1px solid #e6ecf4;border-radius:.4rem;padding:.5rem;margin-top:.4rem;opacity:.85">
+                            <div class="mk-row" style="justify-content:space-between;flex-wrap:nowrap">
+                              <div style="display:flex;gap:.4rem;align-items:flex-start">
+                                <span style="width:.7rem;height:.7rem;border-radius:50%;border:2px solid #b9c3d3;background:#fff;margin-top:.15rem;flex:none"></span>
+                                <div>
+                                  <b style="font-size:.68rem;color:#59657a">DL-10 · West Janakpuri</b>
+                                  <div style="font-size:.58rem;color:var(--muted)">14 km · Does not cover your PIN</div>
+                                </div>
+                              </div>
+                              <span class="mk-chip warn">Not your area</span>
+                            </div>
+                          </div>
+                          <div class="mk-banner amber" style="margin-top:.55rem"><span class="b-icon">!</span><p><b>Changing this later is painful.</b> The RTO you confirm is the only office where you can take the test. You can still change it until you book a slot.</p></div>
+                          <div class="mk-row" style="margin-top:.55rem"><span class="mk-btn">Confirm DL-11 and continue →</span><span class="mk-btn ghost">I live at a different address</span></div>
+                        </div>
+                      </div>
+                      <div style="display:grid;gap:.55rem">
+                        <div class="mk-card" style="padding:.5rem">
+                          <div class="mk-map">
+                            <span class="road r1"></span><span class="road r2"></span><span class="road r3"></span>
+                            <span class="pin">DL-11</span>
+                            <span class="map-tag">Rohini · North West Delhi</span>
+                            <span class="map-scale">500 m</span>
+                          </div>
+                          <p class="hint" style="margin:.4rem 0 0">Your PIN is inside the DL-11 boundary. The office is a 9-minute auto ride from Rohini East metro.</p>
+                        </div>
+                        <div class="mk-card">
+                          <h4>Why we suggest this</h4>
+                          <ul class="mk-checklist">
+                            <li><span class="ck">✓</span> PIN 110085 is notified to DL-11</li>
+                            <li><span class="ck">✓</span> Nearest office for your address</li>
+                            <li><span class="ck">✓</span> Handles learner’s licence tests</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ol class="annotations">
+              <li><span><b>The question changes.</b> Instead of “choose an RTO”, the screen says “confirm the one that covers you”. Defaults are informed, not arbitrary.</span></li>
+              <li><span><b>The map is evidence.</b> It is not decoration: the pin sits inside a jurisdiction boundary, and the distance is stated in kilometres and metro stops.</span></li>
+              <li><span><b>Wrong options stay visible.</b> Hiding them creates mystery; labelling them “not your area” teaches the rule and prevents the original mistake.</span></li>
+              <li><span><b>The cost is named.</b> A plain warning explains where and when the choice becomes irreversible, with a real change window.</span></li>
+            </ol>
+          </div>
+
+          <!-- Screen 3 -->
+          <div class="screen-block">
+            <div class="screen-head">
+              <div>
+                <h3>3 · Guided photo upload with a fix in the same place</h3>
+                <p>The rules are shown before the picker, checked live as the file loads, and every failure names the rule, the actual value and the repair. The applicant never leaves the portal to find a resizer.</p>
+              </div>
+              <span class="tag tag-ui">P0 · first-attempt success</span>
+            </div>
+
+            <div class="frame">
+              <div class="frame-bar">
+                <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                <span class="frame-url"><span class="lock" aria-hidden="true">🔒</span> saathi.gov.in/learner-licence/documents/photo</span>
+              </div>
+              <div class="frame-body">
+                <div class="mk" aria-hidden="true">
+                  <div class="mk-header">
+                    <div class="mk-brand"><span class="mk-logo">S</span><span>Saathi<small>Transport Department, Delhi</small></span></div>
+                    <span class="gov">✓ Official site</span>
+                  </div>
+                  <nav class="mk-nav"><span>Learner’s licence</span><span>My application</span><span class="on" style="border-color:#ffd88a">Documents</span><span>Fees</span><span>Help</span></nav>
+                  <div class="mk-main">
+                    <div class="mk-crumbs">Home › Learner’s licence › Documents › <b>Photograph</b></div>
+                    <div class="mk-page-head">
+                      <div>
+                        <h3 class="mk-title">Upload your photograph</h3>
+                        <p class="mk-sub">One photo, used on your learner’s licence. Check the four rules below before you choose a file.</p>
+                      </div>
+                      <span class="mk-chip info">Saved automatically</span>
+                    </div>
+                    <div class="mk-row">
+                      <span class="mk-chip info">JPG only</span>
+                      <span class="mk-chip info">20–200 KB</span>
+                      <span class="mk-chip info">200 × 230 px</span>
+                      <span class="mk-chip info">Plain light background</span>
+                    </div>
+                    <div class="mk-grid2">
+                      <div class="mk-card">
+                        <h4>Your photograph</h4>
+                        <p class="hint">We check the file as soon as you select it — nothing is uploaded until you confirm.</p>
+                        <div class="mk-upload">
+                          <div class="mk-photo">🙂</div>
+                          <div>
+                            <b style="font-size:.66rem">aarav-photo-hires.jpg</b>
+                            <div style="color:var(--muted);font-size:.56rem;margin-bottom:.25rem">412 KB · 200 × 230 px</div>
+                            <ul class="mk-checklist">
+                              <li><span class="ck">✓</span> File type is JPG</li>
+                              <li class="bad"><span class="ck no">✗</span> Size is 412 KB — limit is 200 KB</li>
+                              <li><span class="ck">✓</span> Dimensions are 200 × 230 px</li>
+                              <li><span class="ck">✓</span> Face is clear and centred</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="mk-error" style="margin-top:.55rem">
+                          <b>That photo was 412 KB — 212 KB over the limit.</b>
+                          The file is otherwise valid. Compress it here, or choose another photo.
+                        </div>
+                        <div class="mk-row" style="margin-top:.55rem"><span class="mk-btn">Compress and use →</span><span class="mk-btn ghost">Choose another file</span></div>
+                      </div>
+                      <div style="display:grid;gap:.55rem">
+                        <div class="mk-card">
+                          <h4>What “acceptable” looks like</h4>
+                          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35rem">
+                            <div style="text-align:center"><div class="mk-photo" style="height:3.4rem;font-size:1rem">🙂</div><span class="mk-chip ok" style="margin-top:.25rem">✓ Accepted</span></div>
+                            <div style="text-align:center"><div class="mk-photo" style="height:3.4rem;font-size:1rem;background:linear-gradient(150deg,#e7c3c8,#c98f98)">🗻</div><span class="mk-chip bad" style="margin-top:.25rem">✗ Too busy</span></div>
+                          </div>
+                          <p class="hint" style="margin:.4rem 0 0">Face fills most of the frame, eyes open, no filters, no group photos, no cap or dark glasses.</p>
+                        </div>
+                        <div class="mk-card">
+                          <h4>Tip for phone photos</h4>
+                          <p class="hint" style="margin:0">Stand facing a plain wall in daylight. Avoid flash and shadows. You do not need a studio or an agent for this step.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mk-banner"><span class="b-icon">i</span><p><b>Nothing is submitted yet.</b> You can replace this photo any time before you pay the fee.</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ol class="annotations">
+              <li><span><b>Rules before the picker.</b> The four constraints are visible as chips before a file is chosen, so the applicant can prepare the right photo the first time.</span></li>
+              <li><span><b>Checks resolve individually.</b> Four named checks fill in live instead of one vague “invalid file” after upload.</span></li>
+              <li><span><b>Errors include the arithmetic.</b> “412 KB — 212 KB over the limit” tells the user what happened, not just that something did.</span></li>
+              <li><span><b>Repair stays in the flow.</b> In-browser compress and retake options remove the third-party resizer and the friend with Photoshop.</span></li>
+            </ol>
+            <p class="screen-note">The checklist keeps all four rules visible <em>on</em> the error, so the user can see that three passed and one failed. The interface never collapses that into “invalid file” — a small decision with a large effect on whether people finish alone.</p>
+          </div>
+
+          <!-- Screen 4 -->
+          <div class="screen-block">
+            <div class="screen-head">
+              <div>
+                <h3>4 · A status that answers the four questions</h3>
+                <p>“Under Scrutiny” becomes a plain-language state with a reason, an owner, a date and an explicit answer to “do I need to do anything?” — wrapped in a progress model that always shows what is left.</p>
+              </div>
+              <span class="tag tag-ui">P0 · status limbo</span>
+            </div>
+
+            <div class="frame">
+              <div class="frame-bar">
+                <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                <span class="frame-url"><span class="lock" aria-hidden="true">🔒</span> saathi.gov.in/application/DL-LL-2026-081452</span>
+              </div>
+              <div class="frame-body">
+                <div class="mk" aria-hidden="true">
+                  <div class="mk-header">
+                    <div class="mk-brand"><span class="mk-logo">S</span><span>Saathi<small>Transport Department, Delhi</small></span></div>
+                    <span class="gov">✓ Official site</span>
+                  </div>
+                  <nav class="mk-nav"><span>Learner’s licence</span><span class="on">My application</span><span>Documents</span><span>Fees</span><span>Help</span></nav>
+                  <div class="mk-main">
+                    <div class="mk-crumbs">Home › My application › <b>DL-LL-2026-081452</b></div>
+                    <div class="mk-page-head">
+                      <div>
+                        <h3 class="mk-title">Your learner’s licence application</h3>
+                        <p class="mk-sub">DL-LL-2026-081452 · Rohini (DL-11) · submitted 28 Aug 2026</p>
+                      </div>
+                      <span class="mk-chip info">2 of 5 steps done</span>
+                    </div>
+
+                    <div class="mk-status amber">
+                      <span class="s-icon"><span>!</span></span>
+                      <div style="flex:1">
+                        <span class="s-label">In progress · no action needed</span>
+                        <b>We’re checking your address proof</b>
+                        <p>This is a routine verification. It usually takes 3 working days and is due by <b>2 September</b>. We’ll SMS you on 98XXXXXX42 either way.</p>
+                        <div class="mk-progress" style="margin-top:.45rem"><span style="width:40%"></span></div>
+                        <div class="mk-legend"><span>2 of 5 steps complete</span><span>3 remaining</span></div>
+                      </div>
+                    </div>
+
+                    <div class="mk-grid2">
+                      <div class="mk-card">
+                        <h4>Where your application is</h4>
+                        <ol class="mk-steps">
+                          <li class="done"><span class="dot">✓</span><div><b>Application submitted</b><span>Details, documents and fee received</span></div><span class="meta">28 Aug</span></li>
+                          <li class="done"><span class="dot">✓</span><div><b>Documents received</b><span>4 files · 2 verified automatically</span></div><span class="meta">28 Aug</span></li>
+                          <li class="now"><span class="dot">●</span><div><b>Address proof check</b><span>With the DL-11 verification desk</span></div><span class="meta">Due 2 Sep</span></li>
+                          <li><span class="dot">4</span><div><b>Book your test slot</b><span>Opens automatically after approval</span></div><span class="meta">Next</span></li>
+                          <li><span class="dot">5</span><div><b>Online test &amp; licence</b><span>30 minutes, from this device</span></div><span class="meta">—</span></li>
+                        </ol>
+                      </div>
+                      <div style="display:grid;gap:.55rem">
+                        <div class="mk-card">
+                          <h4>Do I need to do anything?</h4>
+                          <div class="mk-banner green" style="margin-bottom:.4rem"><span class="b-icon">✓</span><p><b>No. Wait for the SMS.</b> We will message you by 2 September. Nothing is missing from your application.</p></div>
+                          <p class="hint" style="margin:0"><b>Who is looking after it:</b> DL-11 Rohini verification desk · 3 working days.</p>
+                        </div>
+                        <div class="mk-card">
+                          <h4>If something is wrong</h4>
+                          <p class="hint">We will tell you exactly which document we need and give you 7 days to replace it. Your fee is not charged again.</p>
+                          <span class="mk-btn ghost small">Get help with this step</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mk-banner"><span class="b-icon">→</span><p><b>What happens next:</b> once the check is complete you will book a 30-minute test, take it online, and your learner’s licence is issued the same day. You are 3 steps away.</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ol class="annotations">
+              <li><span><b>Plain language first.</b> The headline describes the activity, not the internal queue: “We’re checking your address proof.” The internal term lives only in a small metadata label.</span></li>
+              <li><span><b>Owner and date, always.</b> Every status names who holds the file and when to expect movement, which converts waiting into a bounded expectation.</span></li>
+              <li><span><b>“No action needed” is a feature.</b> The interface answers the question users actually ask, and repeats it in the next-step banner.</span></li>
+              <li><span><b>Progress is relative, not absolute.</b> “2 of 5 steps” and a 40% bar give a sense of remaining effort; the timeline explains what each remaining step will ask of them.</span></li>
+            </ol>
+          </div>
+
+          <!-- Screen 5 -->
+          <div class="screen-block">
+            <div class="screen-head">
+              <div>
+                <h3>5 · Payment that removes doubt, and failure that keeps it honest</h3>
+                <p>A successful payment names the amount, the application and the transaction, and keeps the receipt reachable forever. A failed payment says whether money left the account — the single most important sentence in the flow.</p>
+              </div>
+              <span class="tag tag-ui">P1 · trust</span>
+            </div>
+
+            <div class="frame">
+              <div class="frame-bar">
+                <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                <span class="frame-url"><span class="lock" aria-hidden="true">🔒</span> saathi.gov.in/learner-licence/payment/success</span>
+              </div>
+              <div class="frame-body">
+                <div class="mk" aria-hidden="true">
+                  <div class="mk-header">
+                    <div class="mk-brand"><span class="mk-logo">S</span><span>Saathi<small>Transport Department, Delhi</small></span></div>
+                    <span class="gov">✓ Official site</span>
+                  </div>
+                  <div class="mk-main">
+                    <div class="mk-grid2 even">
+                      <div class="mk-card">
+                        <div class="mk-success">
+                          <div class="ring">✓</div>
+                          <h3>Payment successful</h3>
+                          <p>Your application has been submitted. Keep this receipt.</p>
+                        </div>
+                        <div class="mk-money"><span>Amount paid</span><b>₹275.00</b></div>
+                        <div class="mk-kv" style="margin-top:.5rem">
+                          <div><span>Transaction</span><b>DEMO-TXN-28082619</b></div>
+                          <div><span>Date</span><b>28 Aug 2026, 2:32 pm</b></div>
+                          <div><span>Method</span><b>UPI · demo bank</b></div>
+                          <div><span>Application</span><b>DL-LL-2026-081452</b></div>
+                        </div>
+                        <div class="mk-row" style="margin-top:.55rem">
+                          <span class="mk-btn">Download receipt</span>
+                          <span class="mk-btn ghost">Email receipt</span>
+                        </div>
+                        <div class="mk-banner green" style="margin-top:.55rem"><span class="b-icon">✓</span><p><b>Money is with the Transport Department, not an agent.</b> If your bank shows a pending debit, it will settle within 24 hours. Do not pay again.</p></div>
+                      </div>
+
+                      <div style="display:grid;gap:.55rem">
+                        <div class="mk-card">
+                          <h4>Your receipt</h4>
+                          <div style="font-size:.6rem;color:var(--muted);display:grid;gap:.22rem">
+                            <div style="display:flex;justify-content:space-between"><span>Application fee</span><span>₹150.00</span></div>
+                            <div style="display:flex;justify-content:space-between"><span>Learner’s test fee</span><span>₹50.00</span></div>
+                            <div style="display:flex;justify-content:space-between"><span>Service charge</span><span>₹75.00</span></div>
+                          </div>
+                          <div class="mk-money" style="border-top:1px solid #d8e0ea"><span>Total paid</span><b style="font-size:.9rem">₹275.00</b></div>
+                          <p class="hint" style="margin:.35rem 0 0">Saved to your application and emailed to aarav.demo@example.in.</p>
+                        </div>
+                        <div class="mk-card" style="border-color:#f0c8ce">
+                          <h4 style="color:var(--red-800)">If a payment fails</h4>
+                          <p class="hint" style="margin-bottom:.35rem">The same screen would say one of exactly two things:</p>
+                          <div class="mk-error" style="background:#fff;margin-bottom:.3rem"><b>No money has left your account.</b> Try again — your application and documents are saved.</div>
+                          <div class="mk-error"><b>₹275.00 was debited.</b> Your slot is not confirmed yet. We are checking with the bank — reference DEMO-TXN-28082619. Do not pay again.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ol class="annotations">
+              <li><span><b>Success is a screen, not a toast.</b> It confirms the amount, the application number and the transaction in one place, so nothing needs to be reconstructed from memory.</span></li>
+              <li><span><b>Receipts are durable.</b> Download, email and an always-available copy in “My application” replace the screenshot workaround.</span></li>
+              <li><span><b>Failure has two semantics.</b> “No money left” and “money debited, slot unconfirmed” are different situations with different instructions — never one generic “Payment Failed”.</span></li>
+              <li><span><b>The data is safe by design.</b> The failure message explicitly says the application and documents are saved, which removes the fear of starting over.</span></li>
+            </ol>
+          </div>
+
+          <!-- Screen 6 -->
+          <div class="screen-block">
+            <div class="screen-head">
+              <div>
+                <h3>6 · Completion with a next milestone, not a dead end</h3>
+                <p>The journey ends by answering “am I done?” — and then immediately reframes the next obligation (30 days of practice, then a permanent licence test) as a known, dated milestone instead of another surprise.</p>
+              </div>
+              <span class="tag tag-ui">P2 · completion</span>
+            </div>
+
+            <div class="frame">
+              <div class="frame-bar">
+                <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                <span class="frame-url"><span class="lock" aria-hidden="true">🔒</span> saathi.gov.in/learner-licence/issued</span>
+              </div>
+              <div class="frame-body">
+                <div class="mk" aria-hidden="true" style="max-width:40rem;margin-inline:auto">
+                  <div class="mk-header">
+                    <div class="mk-brand"><span class="mk-logo">S</span><span>Saathi<small>Transport Department, Delhi</small></span></div>
+                    <span class="gov">✓ Official site</span>
+                  </div>
+                  <div class="mk-main">
+                    <div class="mk-banner green"><span class="b-icon">✓</span><p><b>You’re done. Your learner’s licence has been issued.</b> Valid from 4 Sep 2026 for 6 months, anywhere in India.</p></div>
+                    <div class="mk-licence">
+                      <div class="lh"><span>LEARNER’S LICENCE · INDIA</span><span>VALID</span></div>
+                      <div class="lb">
+                        <div class="pf">🙂</div>
+                        <div>
+                          <b>Aarav Mehta</b>
+                          <small>DOB 14/08/2006 · MCWOG</small>
+                          <small class="num">DL-DEMO-2026-81452</small>
+                          <small>Issued 04/09/2026 · Valid to 03/03/2027</small>
+                          <small>RTO DL-11 Rohini · Delhi</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mk-row">
+                      <span class="mk-btn">Download licence</span>
+                      <span class="mk-btn ghost">Add to DigiLocker</span>
+                      <span class="mk-btn ghost">View receipt</span>
+                    </div>
+                    <div class="mk-card">
+                      <h4>What happens next</h4>
+                      <ol class="mk-steps">
+                        <li class="done"><span class="dot">✓</span><div><b>Learner’s licence issued</b><span>Download it now — a digital copy is valid</span></div><span class="meta">Today</span></li>
+                        <li class="now"><span class="dot">●</span><div><b>Practice for 30 days</b><span>Display an “L” board on the vehicle. Drive with a licensed adult.</span></div><span class="meta">Until 4 Oct</span></li>
+                        <li><span class="dot">3</span><div><b>Apply for your permanent licence</b><span>Book the RTO driving test between day 31 and month 6</span></div><span class="meta">From 4 Oct</span></li>
+                      </ol>
+                    </div>
+                    <div class="mk-banner"><span class="b-icon">i</span><p><b>We’ll remind you on 4 October</b> when your practice period ends. Nothing else is needed from you today.</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ol class="annotations">
+              <li><span><b>Completion is explicit.</b> “You’re done” plus the validity window removes the ambiguity of a status that merely stops changing.</span></li>
+              <li><span><b>The artefact is the proof.</b> A licence-shaped card with number, class and validity is immediately recognisable and shareable.</span></li>
+              <li><span><b>The next obligation is scheduled.</b> Practice period and permanent-licence window are stated with dates, so the next journey does not begin with another search.</span></li>
+              <li><span><b>Nothing left to do today.</b> The final banner explicitly releases the user, which is the emotional end of the service.</span></li>
+            </ol>
+          </div>
+
+          <div class="rule-title"><h3>The whole prototype, not just the highlights</h3><span>32 screens across 7 phases</span></div>
+          <div class="flowmap">
+            <div class="flow-phase">
+              <div class="ph-top"><b>Start</b><span class="count">3</span></div>
+              <ul><li>Welcome</li><li>Dashboard</li><li>Service start</li></ul>
+            </div>
+            <div class="flow-phase">
+              <div class="ph-top"><b>Verify</b><span class="count">3</span></div>
+              <ul><li>Identity</li><li>Aadhaar</li><li>Mobile OTP</li></ul>
+            </div>
+            <div class="flow-phase">
+              <div class="ph-top"><b>Details</b><span class="count">6</span></div>
+              <ul><li>Test route</li><li>Personal details</li><li>Address</li><li>Vehicle class</li><li>Declaration</li><li>Details complete</li></ul>
+            </div>
+            <div class="flow-phase">
+              <div class="ph-top"><b>Submit &amp; pay</b><span class="count">5</span></div>
+              <ul><li>Documents</li><li>Documents complete</li><li>Review</li><li>Payment</li><li>Confirmation</li></ul>
+            </div>
+            <div class="flow-phase">
+              <div class="ph-top"><b>Prepare &amp; book</b><span class="count">5</span></div>
+              <ul><li>Receipt</li><li>Preparation</li><li>Tutorial</li><li>Tutorial complete</li><li>Slot booking</li></ul>
+            </div>
+            <div class="flow-phase">
+              <div class="ph-top"><b>Take the test</b><span class="count">7</span></div>
+              <ul><li>Slot confirmed</li><li>Roadmap</li><li>Instructions</li><li>Face check</li><li>Face failed</li><li>Face passed</li><li>Online test</li></ul>
+            </div>
+            <div class="flow-phase">
+              <div class="ph-top"><b>Result</b><span class="count">3</span></div>
+              <ul><li>Passed</li><li>Not passed</li><li>Licence issued</li></ul>
+            </div>
+          </div>
+          <p class="small muted" style="margin:.7rem 0 1.4rem">Both test outcomes are built, including the retest branch, and progress persists across reloads.</p>
+
+          <div class="callout">
+            <strong>Why only six screens are annotated?</strong>
+            <p class="small" style="margin-bottom:0">These are the moments where the research says journeys break. The remaining screens follow the same rules: one decision per screen, requirements before action, and a visible next step. <a href="index.html">Walk the full flow →</a></p>
+          </div>
+        </section>
+
+        <!-- ============================ 11 DESIGN SYSTEM ============================ -->
+        <section class="cs-section" id="system" aria-labelledby="system-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">11</span>
+            <div>
+              <p class="eyebrow">Design system</p>
+              <h2 id="system-title">A small system built for reassurance</h2>
+              <p>The UI does not need a large library — it needs a small set of trustworthy parts used consistently. Every token below exists in the prototype as a CSS custom property, so the case study and the build cannot drift apart.</p>
+            </div>
+          </div>
+
+          <div class="rule-title" style="margin-top:0"><h3>Colour</h3><span>State is never carried by colour alone</span></div>
+          <div class="swatches">
+            <div class="swatch"><div class="chip" style="background:#062a63"></div><div class="meta"><b>Blue 950</b><span>#062a63</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#073b86"></div><div class="meta"><b>Blue 900</b><span>#073b86</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#0754b8"></div><div class="meta"><b>Blue 800</b><span>#0754b8</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#eaf3ff"></div><div class="meta"><b>Blue 100</b><span>#eaf3ff</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#17613d"></div><div class="meta"><b>Green 800</b><span>#17613d</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#e6f5ec"></div><div class="meta"><b>Green 100</b><span>#e6f5ec</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#8a5a00"></div><div class="meta"><b>Amber 800</b><span>#8a5a00</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#fdf1d6"></div><div class="meta"><b>Amber 100</b><span>#fdf1d6</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#9b2935"></div><div class="meta"><b>Red 800</b><span>#9b2935</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#fdebed"></div><div class="meta"><b>Red 100</b><span>#fdebed</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#172033"></div><div class="meta"><b>Ink</b><span>#172033</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#f6f8fb;border-bottom:1px solid #e5e0d6"></div><div class="meta"><b>Canvas</b><span>#f6f8fb</span></div></div>
+          </div>
+          <p class="small muted" style="margin-top:.7rem">Blue carries action and official identity. Green confirms completion. Amber means “waiting, nothing required”. Red only marks something the user must fix. Each state also carries an icon and a sentence, so colour is redundant.</p>
+
+          <div class="rule-title"><h3>Type &amp; spacing</h3><span>System fonts only · no network requests</span></div>
+          <div class="grid-2" style="align-items:start">
+            <div class="type-scale">
+              <div class="type-row"><div class="spec"><b>Display</b>2.7rem / 1.18</div><div class="type-sample ts-1">Licence, without the guesswork.</div></div>
+              <div class="type-row"><div class="spec"><b>Section</b>2rem / 1.2</div><div class="type-sample ts-2">Confirm your RTO</div></div>
+              <div class="type-row"><div class="spec"><b>Heading</b>1.5rem / 1.25</div><div class="type-sample ts-3">We’re checking your address proof</div></div>
+              <div class="type-row"><div class="spec"><b>Body</b>1rem / 1.55</div><div class="type-sample ts-body">This usually takes 3 working days. We’ll SMS you either way.</div></div>
+              <div class="type-row"><div class="spec"><b>Small / hint</b>.875rem</div><div class="type-sample ts-body" style="font-size:.875rem;color:var(--muted)">JPG only · 20–200 KB · 200 × 230 px</div></div>
+            </div>
+            <div class="tokens" style="grid-template-columns:1fr 1fr">
+              <div class="token"><b>Space</b><code>.25 → 4rem</code><p>8-step scale; page rhythm is 1.5rem and 2rem, never arbitrary.</p></div>
+              <div class="token"><b>Radius</b><code>.35 / .65 / 1rem</code><p>Controls, cards and sheets. Pills are reserved for status.</p></div>
+              <div class="token"><b>Control</b><code>2.9rem</code><p>Minimum target height for every button, link-button and input.</p></div>
+              <div class="token"><b>Shadow</b><code>1 layer, low</code><p>One soft elevation. Status is expressed by border and background, not shadow.</p></div>
+              <div class="token"><b>Max width</b><code>90rem</code><p>Content columns cap at 44–48rem for reading comfort.</p></div>
+              <div class="token"><b>Focus</b><code>3px #ffbf47</code><p>High-contrast focus ring with offset, never removed.</p></div>
+            </div>
+          </div>
+
+          <div class="rule-title"><h3>Core components</h3><span>Six parts carry the whole journey · static specimens</span></div>
+          <div class="component-shelf">
+            <div class="comp">
+              <span class="comp-label">Actions</span>
+              <div class="demo-row">
+                <button class="btn btn-primary" type="button">Confirm and continue →</button>
+                <button class="btn btn-quiet" type="button" style="border:1px solid var(--blue-900)">Back</button>
+              </div>
+              <div class="demo-row">
+                <button class="btn" type="button">Choose another file</button>
+                <button class="btn" type="button" disabled>Disabled until valid</button>
+              </div>
+              <p class="small muted" style="margin:0">One primary action per screen. Secondary actions never compete visually.</p>
+            </div>
+            <div class="comp">
+              <span class="comp-label">Status messages</span>
+              <div class="status-demo ok"><span class="i">✓</span><span><b>Payment successful.</b> Receipt saved to your application.</span></div>
+              <div class="status-demo warn"><span class="i">!</span><span><b>No action needed.</b> We’re checking your address proof until 2 Sep.</span></div>
+              <div class="status-demo err"><span class="i">!</span><span><b>That photo is 412 KB.</b> The limit is 200 KB — compress it here.</span></div>
+            </div>
+            <div class="comp">
+              <span class="comp-label">Requirement chips</span>
+              <div class="demo-row">
+                <span class="mk-chip info">JPG only</span>
+                <span class="mk-chip info">20–200 KB</span>
+                <span class="mk-chip info">200 × 230 px</span>
+                <span class="mk-chip info">Plain background</span>
+              </div>
+              <p class="small muted" style="margin:0">Four short constraints, visible before the file picker. Reused verbatim inside the error message.</p>
+            </div>
+            <div class="comp">
+              <span class="comp-label">Progress</span>
+              <div style="display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted)"><span>Application</span><span>40%</span></div>
+              <div class="progress-demo"><span></span></div>
+              <div class="demo-row" style="font-size:.72rem;color:var(--muted)">
+                <span><span class="swatch-inline" style="background:var(--green-100);border-color:#bfe0cc"></span> Done 2</span>
+                <span><span class="swatch-inline" style="background:var(--blue-800)"></span> Current</span>
+                <span><span class="swatch-inline" style="background:#fff"></span> Remaining 3</span>
+              </div>
+              <p class="small muted" style="margin:0">Progress is repeated as text (“2 of 5 steps”) so it survives greyscale and screen readers.</p>
+            </div>
+            <div class="comp">
+              <span class="comp-label">Form field</span>
+              <label style="display:grid;gap:.3rem;font-size:.8rem;font-weight:700">Pincode
+                <input style="min-height:2.5rem;border:1px solid #9cabc0;border-radius:.3rem;padding:.45rem .55rem;font-size:.85rem" value="110085" aria-describedby="pin-help">
+              </label>
+              <p id="pin-help" class="small muted" style="margin:0">Used only to recommend your RTO. You can change it until you book a slot.</p>
+            </div>
+            <div class="comp">
+              <span class="comp-label">Evidence block</span>
+              <div style="border:.14rem solid var(--blue-900);border-radius:.4rem;padding:.55rem;font-size:.75rem">
+                <div style="background:var(--blue-900);color:#fff;margin:-.55rem -.55rem .45rem;padding:.3rem .55rem;font-weight:800;font-size:.65rem;letter-spacing:.04em">RECEIPT · DEMO-TXN-28082619</div>
+                <div style="display:flex;justify-content:space-between"><span>Amount paid</span><b>₹275.00</b></div>
+                <div style="display:flex;justify-content:space-between;color:var(--muted)"><span>28 Aug 2026</span><span>DL-LL-2026-081452</span></div>
+              </div>
+              <p class="small muted" style="margin:0">Anything irreversible produces a durable artefact users can download, email or print.</p>
+            </div>
+          </div>
+
+          <div class="rule-title"><h3>Content design</h3><span>The copy is the interface</span></div>
+          <div class="ba">
+            <div class="ba-col">
+              <div class="ba-head before"><span aria-hidden="true">✗</span> Before — system speaking</div>
+              <div class="ba-body">
+                <div class="ba-msg b"><b>Under Scrutiny</b><small>No reason, owner or date. User cannot tell if they erred.</small></div>
+                <div class="ba-msg b"><b>Invalid file. Please upload a valid photograph.</b><small>Which rule failed? By how much? Fix where?</small></div>
+                <div class="ba-msg b"><b>Payment Failed.</b><small>Was money deducted? Is the application lost? Unknown.</small></div>
+              </div>
+            </div>
+            <div class="ba-col">
+              <div class="ba-head after"><span aria-hidden="true">✓</span> After — person speaking</div>
+              <div class="ba-body">
+                <div class="ba-msg a"><b>We’re checking your address proof.</b><small>No action needed. Due by 2 Sep. We’ll SMS you either way.</small></div>
+                <div class="ba-msg a"><b>That photo is 412 KB — 212 KB over the limit.</b><small>It’s 200 × 230 px and otherwise valid. Compress it here, or choose another.</small></div>
+                <div class="ba-msg a"><b>No money has left your account.</b><small>Try again — your application and documents are saved.</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-2" style="margin-top:1rem">
+            <div class="card card-flat">
+              <p class="kicker">Voice rules</p>
+              <ul class="small" style="margin:0;padding-left:1.1rem;display:grid;gap:.35rem;color:var(--ink-soft)">
+                <li>Sentence case, second person, no government code names.</li>
+                <li>Lead with what is happening, then what the user must do.</li>
+                <li>Quantify: amounts, file sizes, dates, step counts.</li>
+                <li>Never blame the user; describe the file, not the person.</li>
+                <li>Every message ends in an action, a date, or “nothing to do”.</li>
+              </ul>
+            </div>
+            <div class="card card-flat">
+              <p class="kicker">Status model</p>
+              <p class="small" style="margin-bottom:.4rem">Each status is generated from four fields, not written ad hoc:</p>
+              <div class="table-scroll" style="border-radius:.4rem" tabindex="0">
+                <table class="cs-table" style="min-width:0;font-size:.78rem" aria-label="Status model fields">
+                  <tbody>
+                    <tr><th scope="row">What</th><td>“We’re checking your address proof”</td></tr>
+                    <tr><th scope="row">Why</th><td>“Routine verification for your address”</td></tr>
+                    <tr><th scope="row">Who / by when</th><td>“DL-11 desk · due by 2 Sep”</td></tr>
+                    <tr><th scope="row">Action</th><td>“No action needed” or one specific step</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================ 12 ACCESSIBILITY ============================ -->
+        <section class="cs-section" id="accessibility" aria-labelledby="access-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">12</span>
+            <div>
+              <p class="eyebrow">Accessibility</p>
+              <h2 id="access-title">Built in, not audited on</h2>
+              <p>A service used once cannot rely on learned workarounds. Accessibility decisions were made while building each screen, and are documented here so they can be verified rather than assumed.</p>
+            </div>
+          </div>
+
+          <div class="grid-2" style="align-items:start">
+            <ul class="checklist">
+              <li><span class="tick" aria-hidden="true">✓</span><span><b>Landmarks and headings.</b> One <span class="mono">h1</span> per screen, ordered headings, skip link to main content, labelled navigation.</span></li>
+              <li><span class="tick" aria-hidden="true">✓</span><span><b>Visible focus.</b> A high-contrast amber ring with offset on every interactive element; never removed.</span></li>
+              <li><span class="tick" aria-hidden="true">✓</span><span><b>Status announcements.</b> Error and status messages use <span class="mono">role="alert"</span> or polite live regions, so progress is heard, not just seen.</span></li>
+              <li><span class="tick" aria-hidden="true">✓</span><span><b>Target size.</b> 2.9rem minimum for controls, including icon-only buttons and slot chips.</span></li>
+              <li><span class="tick" aria-hidden="true">✓</span><span><b>Labels and hints.</b> Every field is programmatically labelled; hints are linked, not placeholder-only.</span></li>
+              <li><span class="tick" aria-hidden="true">✓</span><span><b>No colour-only meaning.</b> Status pairs colour with an icon and a sentence; progress repeats as text.</span></li>
+              <li><span class="tick part" aria-hidden="true">…</span><span><b>Contrast.</b> Body and UI pairs target 4.5:1 / 3:1; a full automated contrast pass is still pending.</span></li>
+              <li><span class="tick part" aria-hidden="true">…</span><span><b>Assistive-tech testing.</b> Structural work is done; moderated testing with screen-reader and low-vision users is the next phase.</span></li>
+            </ul>
+            <div class="stack">
+              <div class="card card-flat" style="background:#fdfbf6">
+                <p class="kicker">Also designed for</p>
+                <ul class="small" style="margin:0;padding-left:1.1rem;display:grid;gap:.4rem;color:var(--ink-soft)">
+                  <li><b>Small screens.</b> 375 px layouts, stacked actions, no horizontal scroll except the deliberate journey chart.</li>
+                  <li><b>Zoom and reflow.</b> Built to reflow at 320 px and 150% zoom without loss of content; still to be verified in testing.</li>
+                  <li><b>Reduced motion.</b> Transitions and smooth scrolling disabled under <span class="mono">prefers-reduced-motion</span>.</li>
+                  <li><b>Offline and interruption.</b> A polite banner reassures users that saved progress is safe when connectivity drops.</li>
+                  <li><b>Print.</b> This case study and the prototype’s receipt are both print-styled for people who keep paper.</li>
+                </ul>
+              </div>
+              <div class="callout">
+                <strong>What is not yet proven.</strong>
+                <p class="small" style="margin-bottom:0">No formal WCAG audit has been run, and no assistive-technology user has tested the prototype. Claims here describe implemented intent. The next phase should include an axe/Lighthouse pass, manual keyboard-only walkthroughs, and testing with NVDA or VoiceOver.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================ 13 MEASUREMENT ============================ -->
+        <section class="cs-section" id="measurement" aria-labelledby="measure-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">13</span>
+            <div>
+              <p class="eyebrow">Measurement</p>
+              <h2 id="measure-title">What would prove this worked</h2>
+              <p>No claim in this case study depends on a metric that has not been collected. Instead, here is the measurement plan the designs were built to satisfy — defined before testing, so a good story cannot be written after the fact.</p>
+            </div>
+          </div>
+
+          <div class="table-scroll" tabindex="0">
+            <table class="cs-table">
+              <caption>Success metrics and instrumentation</caption>
+              <thead>
+                <tr><th scope="col">Metric</th><th scope="col">What it proves</th><th scope="col">Instrumentation</th><th scope="col">Direction</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Independent completion rate</td><td>Users can finish without family, friends or agents</td><td>Task success in moderated tests + “did you need help?” exit question</td><td class="tnum">↑ baseline +20 pts</td></tr>
+                <tr><td>Wrong RTO rate</td><td>Jurisdiction guidance prevents wasted trips</td><td>RTO changes after confirmation; corrections logged at the centre</td><td class="tnum">↓ 50%</td></tr>
+                <tr><td>Photo first-attempt success</td><td>Requirements and live checks work</td><td>First upload accepted ÷ total photo uploads</td><td class="tnum">↑ 80%+</td></tr>
+                <tr><td>Payment confidence score</td><td>People know whether they paid and what happens next</td><td>Post-payment 5-point confidence question + “money deducted” contacts</td><td class="tnum">↑ 4.2 / 5</td></tr>
+                <tr><td>Status understanding</td><td>Every status communicates meaning and next action</td><td>Comprehension test: “what is happening?” and “do you need to do anything?”</td><td class="tnum">↑ 90% correct</td></tr>
+                <tr><td>Time to complete</td><td>The flow is efficient as well as clear</td><td>Median duration, start to submission, split by step</td><td class="tnum">↓ without lowering completion</td></tr>
+                <tr><td>Agent dependency</td><td>The redesign removes paid intermediaries</td><td>Self-reported help-seeking in exit survey; agent-referral traffic</td><td class="tnum">↓ from baseline</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted" style="margin-top:.6rem">Targets are proposals for the pilot, not results. Baselines must be collected before any target is treated as a commitment.</p>
+
+          <div class="metric-cards">
+            <div class="metric"><b>5–8</b><span>first-time applicants per round, recruited outside the design team</span><em>Sample</em></div>
+            <div class="metric"><b>5</b><span>core tasks: find, upload, confirm RTO, read status, prove payment</span><em>Tasks</em></div>
+            <div class="metric"><b>0</b><span>facilitator hints allowed before a task counts as assisted</span><em>Rule</em></div>
+          </div>
+
+          <div class="test-plan" style="margin-top:1rem">
+            <div class="card">
+              <h3>Usability test plan</h3>
+              <ul>
+                <li><b>Warm-up:</b> last time you needed a government service on your phone.</li>
+                <li><b>Task 1:</b> find the official learner’s licence service and start an application.</li>
+                <li><b>Task 2:</b> upload a photo — given a file that is deliberately 412 KB.</li>
+                <li><b>Task 3:</b> confirm the RTO for an unfamiliar PIN code.</li>
+                <li><b>Task 4:</b> explain what “we’re checking your address proof” means and whether any action is needed.</li>
+                <li><b>Task 5:</b> pay, then find the receipt after navigating away.</li>
+                <li><b>Measures:</b> completion without help, time on task, SEQ, comprehension answers, recovery behaviour.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Before / after plan</h3>
+              <ul>
+                <li><b>Baseline:</b> code existing support contacts and RTO correction logs; intercept survey at two RTOs.</li>
+                <li><b>Prototype round:</b> moderated, task-based, 5–8 participants, think-aloud.</li>
+                <li><b>Iteration:</b> fix comprehension failures, re-test the three P0 flows.</li>
+                <li><b>Pilot:</b> staged release with event instrumentation for the seven metrics above.</li>
+                <li><b>Guardrails:</b> no drop in completion for low-literacy or regional-language users; no increase in duplicate payments.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="note" style="margin-top:1rem">
+            <strong>Why no numbers are claimed yet.</strong> The prototype is a design artefact with synthetic data; it cannot generate a valid baseline. Reporting invented percentages would make this case study less useful, not more persuasive.
+          </div>
+        </section>
+
+        <!-- ============================ 14 REFLECTION ============================ -->
+        <section class="cs-section" id="reflection" aria-labelledby="reflection-title">
+          <div class="section-head">
+            <span class="section-num" aria-hidden="true">14</span>
+            <div>
+              <p class="eyebrow">Reflection</p>
+              <h2 id="reflection-title">The problems were never technical</h2>
+              <p>Nothing in this redesign requires new policy or a new backend. It requires the interface to say what it means, show its evidence, and end every screen with an answer. That is an unusually cheap fix for an unusually expensive failure.</p>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="card card-flat">
+              <p class="kicker">What I learned</p>
+              <ul class="small" style="margin:0;padding-left:1.1rem;display:grid;gap:.5rem;color:var(--ink-soft)">
+                <li><b>Clarity is the product.</b> The biggest blockers were labels, defaults and confirmation, not missing features.</li>
+                <li><b>Mental models are contracts.</b> “Aadhaar means online” is a reasonable inference; the product breaks it silently and then punishes the user for believing it.</li>
+                <li><b>Small moments carry the emotion.</b> One error string, one status label and one receipt decide whether the service feels trustworthy.</li>
+                <li><b>Dependency is designed.</b> Every time the interface refuses to explain, it recruits a human into the process.</li>
+                <li><b>Government services must over-communicate.</b> In a once-in-a-lifetime journey, there is no second visit to learn the interface.</li>
+              </ul>
+            </div>
+            <div class="card card-flat" style="background:#fdfbf6">
+              <p class="kicker">What I’d do differently</p>
+              <ul class="small" style="margin:0;padding-left:1.1rem;display:grid;gap:.5rem;color:var(--ink-soft)">
+                <li><b>Recruit for exclusion.</b> The sample was young, urban and English-literate — exactly the users least likely to be blocked.</li>
+                <li><b>Test earlier and rougher.</b> Sketches became full screens before anyone outside the project reacted to them.</li>
+                <li><b>Bring support staff in.</b> Call-centre language would have exposed the real status vocabulary faster than interviews did.</li>
+                <li><b>Design the empty and slow cases.</b> What happens when verification takes nine days, not three?</li>
+                <li><b>Start the content guide on day one.</b> Retrofitting voice rules across 32 screens was the slowest part of the build.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="rule-title"><h3>Where the project actually stands</h3><span>Against the original research plan</span></div>
+          <div class="gap-list">
+            <div class="gap-row"><span><b>Low-fidelity wireframes</b><span>Three P0 flows, documented above.</span></span><span class="tag tag-ok state">Done</span></div>
+            <div class="gap-row"><span><b>Mid / high-fidelity UI</b><span>Six key screens shown here; 32 built in the prototype.</span></span><span class="tag tag-ok state">Done</span></div>
+            <div class="gap-row"><span><b>Interactive prototype</b><span>Hash-routed, saved progress, pass and failure branches.</span></span><span class="tag tag-ok state">Done</span></div>
+            <div class="gap-row"><span><b>Content style guide</b><span>Voice rules, status model and before/after patterns defined; not yet a full reusable guide.</span></span><span class="tag tag-p1 state">Partial</span></div>
+            <div class="gap-row"><span><b>Accessibility review</b><span>Built-in semantics and focus behaviour; no formal audit or AT testing yet.</span></span><span class="tag tag-p1 state">Partial</span></div>
+            <div class="gap-row"><span><b>Policy / technical constraints</b><span>Assumptions validated at a high level; not confirmed with the department.</span></span><span class="tag tag-p1 state">Partial</span></div>
+            <div class="gap-row"><span><b>Usability testing</b><span>Plan and measures defined; sessions not yet run.</span></span><span class="tag tag-p0 state">Next</span></div>
+            <div class="gap-row"><span><b>Quantitative baseline</b><span>Requires analytics access or RTO intercepts.</span></span><span class="tag tag-p0 state">Next</span></div>
+            <div class="gap-row"><span><b>Before / after measurement</b><span>Instrumentation plan defined; no live pilot yet.</span></span><span class="tag tag-p0 state">Next</span></div>
+          </div>
+
+          <div class="card card-flat" style="margin-top:1.2rem;background:linear-gradient(160deg,#f4f8ff,#fff);border-color:#cfe1fa">
+            <p class="kicker">Closing</p>
+            <p style="font-family:var(--display);font-size:clamp(1.25rem,2.4vw,1.7rem);line-height:1.38;margin-bottom:.6rem">The learner’s licence journey is usable in theory and stressful in practice. Fixing the RTO default, the photo rules, the status vocabulary, the payment proof and the progress model moves it from <em>“I need help to finish this”</em> to <em>“I can do this myself, with confidence.”</em></p>
+            <p class="small muted" style="margin-bottom:0">The next chapter is not another screen. It is five to eight first-time applicants, a phone, a deliberately oversized photo — and a willingness to be wrong.</p>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="cs-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h2>Saathi — learner’s licence, redesigned</h2>
+          <p>A research-led UX/UI case study and a 32-screen interactive prototype, built in a hackathon sprint from four primary interviews. The research foundation was documented in a separate case-study PDF; this page adds the design layer, the build and the measurement plan.</p>
+          <p class="disclaimer">Independent prototype. Not affiliated with, endorsed by or connected to the Government of India, Parivahan or Sarathi. All names, numbers, documents and payments are synthetic demo data.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Open the prototype</a></li>
+            <li><a href="#ui">Final UI screens</a></li>
+            <li><a href="#system">Design system</a></li>
+            <li><a href="#measurement">Measurement plan</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Project</h3>
+          <ul class="footer-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#reflection">Reflection &amp; next steps</a></li>
+            <li><a href="#accessibility">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>UX/UI case study · 2026 · Udaipur, India</span>
+        <span>Built with vanilla HTML, CSS and JavaScript · <a href="#top">Back to top ↑</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/case-study.js" defer></script>
+</body>
+</html>

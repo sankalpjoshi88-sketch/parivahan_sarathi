@@ -14,9 +14,15 @@ Open `http://localhost:8080/Code/`. Do not open `index.html` through `file://`; 
 
 The app uses hash routes, so screens such as `http://localhost:8080/Code/#/documents` can be bookmarked and refreshed safely.
 
+## UX/UI case study
+
+`case-study.html` is the full research-to-UI case study: context and problem framing, four interviews and seven failure themes, an emotional journey map, three personas, prioritisation, design principles, low-fidelity wireframes, six annotated high-fidelity screens, the design system and content rules, accessibility notes, and a usability-testing and measurement plan.
+
+It is a standalone page (its own `css/case-study.css` and `js/case-study.js`), linked from the prototype footer, and print-styled so it can be saved as a PDF from the browser.
+
 ## What works
 
-- All 33 screen states from discovery through licence issuance
+- All 32 screens from discovery through licence issuance
 - Saved form and journey progress using browser storage
 - Synthetic Aadhaar and visible demo OTP
 - Document selection and validation simulation
