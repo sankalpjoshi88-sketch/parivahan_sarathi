@@ -19,6 +19,7 @@ The site will be available at:
 - Complete a few screens, refresh, and confirm progress remains saved.
 - Open a bookmarked route such as `#/documents` directly.
 - Confirm the browser console has no missing assets.
+- Open `case-study.html` and confirm the six annotated screen mockups render, then use **Print / save PDF** to check the print layout.
 - Test at 375 px width and with browser zoom set to 150%.
 
 The included `.nojekyll` disables Jekyll processing. All runtime references are relative and navigation uses URL hashes, so the prototype works under a GitHub project subpath.
