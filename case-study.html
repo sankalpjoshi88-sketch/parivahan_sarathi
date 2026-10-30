@@ -35,7 +35,7 @@
       <div class="wrap hero-grid">
         <div>
           <p class="eyebrow">Independent hackathon project · 2026</p>
-          <h1 id="hero-title">From “I need help to finish this” to<br><em>“I can do this myself.”</em></h1>
+          <h1 id="hero-title">From “I need help<br>to finish this” to<br><em>“I can do this myself.”</em></h1>
           <p class="hero-sub">A research-led UX/UI case study of the learner’s licence application on India’s Parivahan → Sarathi portal: four interviews, seven recurring failure themes, and a 32-screen high-fidelity prototype designed so a first-time applicant never has to call a friend, an agent — or Google.</p>
           <dl class="hero-meta">
             <div><dt>Role</dt><dd>UX research, UI design, prototyping</dd></div>
@@ -49,38 +49,38 @@
           </div>
         </div>
 
-        <div class="hero-screens" role="img" aria-label="Two previews of the redesigned interface: an RTO recommendation and a plain-language application status.">
-          <article class="mini mini-card-b">
-            <div class="mini-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>saathi.gov.in/rto</span></div>
-            <div class="mini-body">
-              <div class="mini-appbar"><span class="mini-logo">S</span> Saathi</div>
-              <span class="mini-pill info">Step 3 of 6</span>
-              <p class="mini-title" style="margin-top:.35rem">Your RTO is DL-11 Rohini</p>
-              <p class="mini-copy">We matched your PIN code 110085 to this jurisdiction.</p>
-              <div class="mini-map" aria-hidden="true"></div>
-              <div class="mini-field"><span>DL-11 · Rohini</span><small>2.4 km</small></div>
-              <p class="mini-note">Not right? Change your address or pick another RTO before paying.</p>
-              <span class="mini-btn">Confirm this RTO</span>
+        <div class="hero-stage" role="img" aria-label="Preview of the Saathi dashboard: welcome screen with application number DL-LL-2026-081452, a 40 percent progress bar, payment confirmation of 275 rupees and the status of each verification step.">
+          <article class="hs-window">
+            <div class="hs-demo"><b>Demo prototype</b> <span class="hs-demo-long">— independent hackathon build · no real data</span><span class="hs-demo-short">— demo data only</span></div>
+            <div class="hs-head">
+              <span class="hs-logo" aria-hidden="true">S</span>
+              <span class="hs-word"><b>Saathi</b><small>Learner’s Licence Guide</small></span>
+              <span class="hs-head-links" aria-hidden="true"><span>Case study</span><span>Help</span></span>
             </div>
-          </article>
-
-          <article class="mini mini-card-c">
-            <div class="mini-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>saathi.gov.in/status</span></div>
-            <div class="mini-body">
-              <div class="mini-appbar"><span class="mini-logo">S</span> Saathi</div>
-              <div style="display:flex;gap:.3rem;align-items:center;margin-bottom:.35rem">
-                <span class="mini-pill warn">In progress</span><span class="mini-pill info">No action needed</span>
+            <div class="hs-nav" aria-hidden="true"><span class="on">My application</span><span>Journey</span><span>Documents</span><span>Fee payment</span></div>
+            <div class="hs-main">
+              <div class="hs-welcome">
+                <p class="hs-hi">Welcome, <span>Aarav</span></p>
+                <p class="hs-dept">Transport Department, Delhi</p>
+                <p class="hs-copy">Application DL-LL-2026-081452 · submitted 28 Aug 2026</p>
               </div>
-              <p class="mini-title">We’re checking your address proof</p>
-              <p class="mini-copy">This usually takes 3 working days. We’ll SMS you on 98XXXXXX42.</p>
-              <ul class="mini-timeline">
-                <li><span class="tick">✓</span><span><b>Documents received</b>28 Aug, 4:12 pm</span></li>
-                <li class="now"><span class="tick">→</span><span><b>Address proof check</b>Due by 2 Sep</span></li>
-                <li><span class="tick">3</span><span><b>Test slot booking</b>Opens after approval</span></li>
-              </ul>
-              <span class="mini-btn ghost">What happens next?</span>
+              <div class="hs-card">
+                <div class="hs-card-head">
+                  <p>Application status</p>
+                  <span class="hs-pill warn">In progress</span>
+                </div>
+                <div class="hs-progress"><span style="width:40%"></span></div>
+                <div class="hs-progress-meta"><span><b>Step 2 of 5</b> · Address proof check</span><span>40%</span></div>
+                <ul class="hs-rows">
+                  <li><i>✓</i><span><b>Payment received</b> · ₹275.00</span><small>28 Aug, 4:12 pm</small></li>
+                  <li class="now"><i>→</i><span><b>Address proof check</b></span><small>Due by 2 Sep</small></li>
+                  <li class="next"><i>3</i><span><b>Book your test slot</b></span><small>Opens after approval</small></li>
+                </ul>
+                <div class="hs-foot"><span class="hs-btn">What happens next? <span aria-hidden="true">→</span></span><small>DEMO-TXN-28082619</small></div>
+              </div>
             </div>
           </article>
+          <p class="hs-caption"><span>32 screens</span><span>7 phases</span><span>Mobile-first</span></p>
         </div>
       </div>
     </section>
@@ -172,7 +172,7 @@
           </div>
 
           <div class="grid-2" style="align-items:stretch">
-            <div class="card card-flat" style="background:#fbfaf6;display:grid;align-content:center">
+            <div class="card card-flat" style="background:#f4f8ff;display:grid;align-content:center">
               <p class="kicker" style="color:var(--red-800)">Primary problem statement</p>
               <p style="font-family:var(--display);font-size:1.2rem;line-height:1.42;margin-bottom:1rem">First-time applicants struggle to complete the application independently because of unclear guidance, poor status communication, confusing RTO selection and low system trust — resulting in anxiety and heavy reliance on external help.</p>
               <p class="small muted" style="margin-bottom:0">Everything below is a supporting failure of that one sentence, not a separate project.</p>
@@ -254,13 +254,13 @@
           </div>
 
           <div class="grid-2" style="margin-top:1.4rem;align-items:start">
-            <figure class="card card-flat" style="margin:0;background:#fbfaf6">
+            <figure class="card card-flat" style="margin:0;background:#f4f8ff">
               <blockquote class="quote">
                 <p>“I thought once I did Aadhaar verification it would all be online.”</p>
                 <footer>Riya, 20 — assumed digital identity meant no RTO visit</footer>
               </blockquote>
             </figure>
-            <figure class="card card-flat" style="margin:0;background:#fbfaf6">
+            <figure class="card card-flat" style="margin:0;background:#f4f8ff">
               <blockquote class="quote">
                 <p>“Why can’t the website tell me the exact photo size before I upload?”</p>
                 <footer>Rohan — photo rejected, then used an online tool he didn’t trust</footer>
@@ -328,8 +328,8 @@
               <p>Every workaround — family, friends, Google, resizing tools, agents — is a self-service gap that has been outsourced to a human. Dependency is the outcome the interface is quietly designing for.</p>
               <p class="why"><b>Evidence:</b> All four participants used at least one external helper. <span class="tag tag-p2">Cross-cutting</span></p>
             </article>
-            <div class="card card-flat" style="background:#fbfaf6;align-self:stretch;display:grid;align-content:center">
-              <p class="kicker" style="color:var(--amber-900)">The synthesis, in one line</p>
+            <div class="card card-flat" style="background:#f4f8ff;align-self:stretch;display:grid;align-content:center">
+              <p class="kicker" style="color:var(--blue-800)">The synthesis, in one line</p>
               <p style="font-family:var(--display);font-size:1.3rem;line-height:1.4;margin-bottom:.6rem">The portal explains the process to itself, not to a person doing it for the first time.</p>
               <p class="small muted" style="margin-bottom:0">That reframing is what turned a list of complaints into a design brief: every screen must answer <em>where am I, what is this, and what happens next?</em></p>
             </div>
@@ -360,19 +360,19 @@
                 </defs>
 
                 <!-- confidence bands -->
-                <rect x="50" y="30" width="950" height="100" fill="#f5f8f5"/>
-                <rect x="50" y="130" width="950" height="70" fill="#fbf8f1"/>
-                <rect x="50" y="200" width="950" height="60" fill="#fcf5f5"/>
-                <text x="1072" y="60" text-anchor="end" font-size="10" fill="#667085" font-weight="700" letter-spacing=".12em">CONFIDENT</text>
-                <text x="1072" y="168" text-anchor="end" font-size="10" fill="#667085" font-weight="700" letter-spacing=".12em">UNCERTAIN</text>
-                <text x="1072" y="232" text-anchor="end" font-size="10" fill="#667085" font-weight="700" letter-spacing=".12em">ANXIOUS</text>
+                <rect x="50" y="30" width="950" height="100" fill="#f5faf7"/>
+                <rect x="50" y="130" width="950" height="70" fill="#fbfcfe"/>
+                <rect x="50" y="200" width="950" height="60" fill="#fdf6f7"/>
+                <text x="1072" y="60" text-anchor="end" font-size="10" fill="#5d687b" font-weight="700" letter-spacing=".12em">CONFIDENT</text>
+                <text x="1072" y="168" text-anchor="end" font-size="10" fill="#5d687b" font-weight="700" letter-spacing=".12em">UNCERTAIN</text>
+                <text x="1072" y="232" text-anchor="end" font-size="10" fill="#5d687b" font-weight="700" letter-spacing=".12em">ANXIOUS</text>
 
                 <!-- grid -->
-                <g stroke="#e6e3da" stroke-width="1" stroke-dasharray="3 4">
+                <g stroke="#d8e0eb" stroke-width="1" stroke-dasharray="3 4">
                   <line x1="50" y1="80" x2="1000" y2="80"/>
                   <line x1="50" y1="180" x2="1000" y2="180"/>
                 </g>
-                <line x1="50" y1="260" x2="1000" y2="260" stroke="#d3cfc4"/>
+                <line x1="50" y1="260" x2="1000" y2="260" stroke="#b9c8dc"/>
 
                 <!-- as-is area + line -->
                 <path d="M70 110 L182 155 L294 97 L406 175 L518 200 L630 180 L742 215 L854 205 L966 90 L966 260 L70 260 Z" fill="url(#areaFill)"/>
@@ -398,7 +398,7 @@
                 <circle cx="742" cy="215" r="13" fill="none" stroke="#9b2935" stroke-width="1.4" stroke-dasharray="3 3" opacity=".7"/>
 
                 <!-- stage labels -->
-                <g font-size="11.5" fill="#4b5563" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif">
+                <g font-size="11.5" fill="#334155" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif">
                   <text x="70" y="288">Search for</text><text x="70" y="301">official portal</text>
                   <text x="182" y="288">Parivahan →</text><text x="182" y="301">Sarathi redirect</text>
                   <text x="294" y="288">Aadhaar +</text><text x="294" y="301">OTP login</text>
@@ -682,15 +682,15 @@
             <figure class="wire">
               <div class="wire-label"><span>Flow C · Status</span><span class="tag tag-p0">P0</span></div>
               <div class="sk h1 w55"></div>
-              <div class="sk-box" style="background:#fdf8ec;border-color:#e8d3a3">
-                <div class="sk w85" style="background:#ddc79c"></div>
-                <div class="sk w70" style="height:.35rem;background:#ecdcbc"></div>
-                <div class="sk w40" style="height:.35rem;background:#ecdcbc"></div>
+              <div class="sk-box" style="background:#fff4d6;border-color:#efdcb2">
+                <div class="sk w85" style="background:#c99a3e"></div>
+                <div class="sk w70" style="height:.35rem;background:#e6d7b4"></div>
+                <div class="sk w40" style="height:.35rem;background:#e6d7b4"></div>
               </div>
               <div class="sk-row" style="justify-content:space-between"><span class="sk w55" style="height:.35rem"></span><span class="sk w40" style="height:.35rem"></span></div>
               <div class="sk-box">
                 <div class="sk-row"><span style="width:.6rem;height:.6rem;border-radius:50%;background:#c3cddb"></span><div class="sk w70"></div></div>
-                <div class="sk-row"><span style="width:.6rem;height:.6rem;border-radius:50%;background:#98a6bc"></span><div class="sk w85"></div></div>
+                <div class="sk-row"><span style="width:.6rem;height:.6rem;border-radius:50%;background:#8497b0"></span><div class="sk w85"></div></div>
                 <div class="sk-row"><span style="width:.6rem;height:.6rem;border-radius:50%;background:#dde3ec"></span><div class="sk w55"></div></div>
               </div>
               <span class="sk-anno">What · who · by when</span>
@@ -709,7 +709,7 @@
                 <li>Every flow gained an exit: <em>change</em>, <em>fix</em>, or <em>get help with this step</em>.</li>
               </ul>
             </div>
-            <div class="card card-flat" style="background:#fbfaf6">
+            <div class="card card-flat" style="background:#f4f8ff">
               <p class="kicker">Constraint checks</p>
               <ul class="small" style="margin:0;padding-left:1.1rem;display:grid;gap:.4rem;color:var(--ink-soft)">
                 <li>No step depends on a file the applicant can’t produce on a phone.</li>
@@ -873,7 +873,7 @@
                               <div style="display:flex;gap:.4rem;align-items:flex-start">
                                 <span style="width:.7rem;height:.7rem;border-radius:50%;border:2px solid #b9c3d3;background:#fff;margin-top:.15rem;flex:none"></span>
                                 <div>
-                                  <b style="font-size:.68rem;color:#59657a">DL-10 · West Janakpuri</b>
+                                  <b style="font-size:.68rem;color:#5d687b">DL-10 · West Janakpuri</b>
                                   <div style="font-size:.58rem;color:var(--muted)">14 km · Does not cover your PIN</div>
                                 </div>
                               </div>
@@ -938,7 +938,7 @@
                     <div class="mk-brand"><span class="mk-logo">S</span><span>Saathi<small>Transport Department, Delhi</small></span></div>
                     <span class="gov">✓ Official site</span>
                   </div>
-                  <nav class="mk-nav"><span>Learner’s licence</span><span>My application</span><span class="on" style="border-color:#e9c47c">Documents</span><span>Fees</span><span>Help</span></nav>
+                  <nav class="mk-nav"><span>Learner’s licence</span><span>My application</span><span class="on" style="border-color:#9cc3ff">Documents</span><span>Fees</span><span>Help</span></nav>
                   <div class="mk-main">
                     <div class="mk-crumbs">Home › Learner’s licence › Documents › <b>Photograph</b></div>
                     <div class="mk-page-head">
@@ -1110,6 +1110,7 @@
                     <div class="mk-brand"><span class="mk-logo">S</span><span>Saathi<small>Transport Department, Delhi</small></span></div>
                     <span class="gov">✓ Official site</span>
                   </div>
+                  <nav class="mk-nav"><span>Learner’s licence</span><span class="on" style="border-color:#9cc3ff">My application</span><span>Documents</span><span>Fees</span><span>Help</span></nav>
                   <div class="mk-main">
                     <div class="mk-grid2 even">
                       <div class="mk-card">
@@ -1285,12 +1286,12 @@
             <div class="swatch"><div class="chip" style="background:#eaf3ff"></div><div class="meta"><b>Blue 100</b><span>#eaf3ff</span></div></div>
             <div class="swatch"><div class="chip" style="background:#17613d"></div><div class="meta"><b>Green 800</b><span>#17613d</span></div></div>
             <div class="swatch"><div class="chip" style="background:#e6f5ec"></div><div class="meta"><b>Green 100</b><span>#e6f5ec</span></div></div>
-            <div class="swatch"><div class="chip" style="background:#8a5a00"></div><div class="meta"><b>Amber 800</b><span>#8a5a00</span></div></div>
-            <div class="swatch"><div class="chip" style="background:#fdf1d6"></div><div class="meta"><b>Amber 100</b><span>#fdf1d6</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#805500"></div><div class="meta"><b>Amber 800</b><span>#805500</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#fff4d6"></div><div class="meta"><b>Amber 100</b><span>#fff4d6</span></div></div>
             <div class="swatch"><div class="chip" style="background:#9b2935"></div><div class="meta"><b>Red 800</b><span>#9b2935</span></div></div>
             <div class="swatch"><div class="chip" style="background:#fdebed"></div><div class="meta"><b>Red 100</b><span>#fdebed</span></div></div>
             <div class="swatch"><div class="chip" style="background:#172033"></div><div class="meta"><b>Ink</b><span>#172033</span></div></div>
-            <div class="swatch"><div class="chip" style="background:#f6f8fb;border-bottom:1px solid #e5e0d6"></div><div class="meta"><b>Canvas</b><span>#f6f8fb</span></div></div>
+            <div class="swatch"><div class="chip" style="background:#f6f8fb;border-bottom:1px solid #e3eaf4"></div><div class="meta"><b>Canvas</b><span>#f6f8fb</span></div></div>
           </div>
           <p class="small muted" style="margin-top:.7rem">Blue carries action and official identity. Green confirms completion. Amber means “waiting, nothing required”. Red only marks something the user must fix. Each state also carries an icon and a sentence, so colour is redundant.</p>
 
@@ -1309,7 +1310,7 @@
               <div class="token"><b>Control</b><code>2.9rem</code><p>Minimum target height for every button, link-button and input.</p></div>
               <div class="token"><b>Shadow</b><code>1 layer, low</code><p>One soft elevation. Status is expressed by border and background, not shadow.</p></div>
               <div class="token"><b>Max width</b><code>90rem</code><p>Content columns cap at 44–48rem for reading comfort.</p></div>
-              <div class="token"><b>Focus</b><code>.2rem #ffbf47</code><p>High-contrast focus ring with offset, never removed.</p></div>
+              <div class="token"><b>Focus</b><code>.2rem blue-800</code><p>Amber #ffbf47 on the navy service bar. Offset, never removed.</p></div>
             </div>
           </div>
 
@@ -1434,7 +1435,7 @@
           <div class="grid-2" style="align-items:start">
             <ul class="checklist">
               <li><span class="tick" aria-hidden="true">✓</span><span><b>Landmarks and headings.</b> One <span class="mono">h1</span> per screen, ordered headings, skip link to main content, labelled navigation.</span></li>
-              <li><span class="tick" aria-hidden="true">✓</span><span><b>Visible focus.</b> A high-contrast amber ring with offset on every interactive element; never removed.</span></li>
+              <li><span class="tick" aria-hidden="true">✓</span><span><b>Visible focus.</b> A high-contrast ring with offset on every interactive element — blue on light surfaces, amber on the navy service bar. Never removed.</span></li>
               <li><span class="tick" aria-hidden="true">✓</span><span><b>Status announcements.</b> Error and status messages use <span class="mono">role="alert"</span> or polite live regions, so progress is heard, not just seen.</span></li>
               <li><span class="tick" aria-hidden="true">✓</span><span><b>Target size.</b> 2.9rem minimum for controls, including icon-only buttons and slot chips.</span></li>
               <li><span class="tick" aria-hidden="true">✓</span><span><b>Labels and hints.</b> Every field is programmatically labelled; hints are linked, not placeholder-only.</span></li>
@@ -1443,7 +1444,7 @@
               <li><span class="tick part" aria-hidden="true">…</span><span><b>Assistive-tech testing.</b> Structural work is done; moderated testing with screen-reader and low-vision users is the next phase.</span></li>
             </ul>
             <div class="stack">
-              <div class="card card-flat" style="background:#fbfaf6">
+              <div class="card card-flat" style="background:#f4f8ff">
                 <p class="kicker">Also designed for</p>
                 <ul class="small" style="margin:0;padding-left:1.1rem;display:grid;gap:.4rem;color:var(--ink-soft)">
                   <li><b>Small screens.</b> 375 px layouts, stacked actions, no horizontal scroll except the deliberate journey chart.</li>
@@ -1549,7 +1550,7 @@
                 <li><b>Government services must over-communicate.</b> In a once-in-a-lifetime journey, there is no second visit to learn the interface.</li>
               </ul>
             </div>
-            <div class="card card-flat" style="background:#fbfaf6">
+            <div class="card card-flat" style="background:#f4f8ff">
               <p class="kicker">What I’d do differently</p>
               <ul class="small" style="margin:0;padding-left:1.1rem;display:grid;gap:.5rem;color:var(--ink-soft)">
                 <li><b>Recruit for exclusion.</b> The sample was young, urban and English-literate — exactly the users least likely to be blocked.</li>

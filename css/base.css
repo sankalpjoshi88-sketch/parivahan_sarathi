@@ -10,5 +10,5 @@
 }
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--canvas);color:var(--ink);font:400 var(--text-base)/1.55 var(--font)}
 button,input,select,textarea{font:inherit} button,a{touch-action:manipulation} a{color:var(--blue-800)} img{max-width:100%} h1,h2,h3,p{margin-top:0} h1{font-size:var(--text-2xl);line-height:1.18} h2{font-size:var(--text-xl);line-height:1.25} h3{font-size:var(--text-lg)}
-:focus-visible{outline:.2rem solid #ffbf47;outline-offset:.18rem}.skip-link{position:fixed;left:var(--space-3);top:-6rem;background:#fff;padding:var(--space-3);z-index:100}.skip-link:focus{top:var(--space-3)}
+:focus-visible{outline:.2rem solid var(--blue-800);outline-offset:.18rem}.service-nav :focus-visible{outline-color:#ffbf47}.skip-link{position:fixed;left:var(--space-3);top:-6rem;background:#fff;padding:var(--space-3);z-index:100}.skip-link:focus{top:var(--space-3)}
 .wrap{width:min(calc(100% - var(--space-6)),var(--max));margin-inline:auto}.fallback{max-width:40rem;margin:10vh auto;padding:var(--space-6)}
